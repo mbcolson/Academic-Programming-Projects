@@ -1,6 +1,3 @@
-// Michael Colson   4-7-08   CISP 401
-// Chapter 6 p.499 #7
-
 import java.util.*;
 
 public class TicTacToe
