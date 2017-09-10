@@ -104,22 +104,22 @@ public class TicTacToe
     public void reinitializeGame()
     {
         int row, column;
-	      for(row = 0; row < 3; row++)
+        for(row = 0; row < 3; row++)
             for(column = 0; column < 3; column++)
                 gameBoard[row][column] = ' ';
     }
 
     public boolean isFull()
     {
-	      for(int i = 0; i < 3; i++)
-	      {
-	          for(int j = 0; j < 3; j++)
-	          {
-	              if(gameBoard[i][j] == ' ')
-	                  return false;
-	          }
-	      }
-	      return true;
+        for(int i = 0; i < 3; i++)
+        { 
+            for(int j = 0; j < 3; j++)
+            {
+                if(gameBoard[i][j] == ' ')
+                    return false;
+            }
+        }
+        return true;
     }
 
     public static void main(String[] args)
