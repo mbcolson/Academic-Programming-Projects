@@ -5,42 +5,43 @@ import javax.swing.event.*;
 
 public class ball extends JFrame
 {
-	private float dx;
-	private float dy;
-	private int x_location;
-	private int y_location;
+    private float dx;
+    private float dy;
+    private int x_location;
+    private int y_location;
 
-	public static void main(String args[]) throws Exception
-	{
+    public static void main(String args[]) throws Exception
+    {
     	ball ballObj = new ball(1,5,0,0);
-
-    	for(int i = 0; i < 10000; i++)
-    	{
+        
+        for(int i = 0; i < 10000; i++)
+        {
     	    ballObj.moveBall();
 
     	    if(ballObj.x_location >= 425)
     	        ballObj.swapSignOfX();
 
     	    if(ballObj.y_location >= 425)
-              ballObj.swapSignOfY();
+                ballObj.swapSignOfY();
 
-          if(ballObj.y_location == 0)
-              ballObj.swapSignOfY();
+            if(ballObj.y_location == 0)
+                ballObj.swapSignOfY();
 
-          if(ballObj.x_location == 0)
-              ballObj.swapSignOfX();
+            if(ballObj.x_location == 0)
+                ballObj.swapSignOfX();
 
-          if(ballObj.y_location == 135 && (ballObj.x_location >= 140 &&
-              ballObj.x_location <= 260) && ballObj.dy > 0)
-              ballObj.swapSignOfY();
+            if(ballObj.y_location == 135 && (ballObj.x_location >= 140 &&
+                ballObj.x_location <= 260) && ballObj.dy > 0)
+                ballObj.swapSignOfY();
 
-          if(ballObj.y_location == 260 && (ballObj.x_location >= 140 &&
-              ballObj.x_location <= 260) && ballObj.dy < 0)
-              ballObj.swapSignOfY();
+            if(ballObj.y_location == 260 && (ballObj.x_location >= 140 &&
+                ballObj.x_location <= 260) && ballObj.dy < 0)
+                ballObj.swapSignOfY();
 
-          if(ballObj.y_location == 145 && (ballObj.x_location >= 125 &&
-             ballObj.x_location <= 275) && ballObj.dy > 0)
-             ballObj.swapSignOfX();
+            if(ballObj.y_location == 145 && (ballObj.x_location >= 125 &&
+                ballObj.x_location <= 275) && ballObj.dy > 0)
+                ballObj.swapSignOfX();
+        }
     }
 
     public ball(int dx, int dy, int x_location, int y_location)
