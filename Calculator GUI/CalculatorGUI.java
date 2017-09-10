@@ -191,67 +191,64 @@ public class CalculatorGUI extends JFrame implements ActionListener
 
         if(e.getActionCommand().equals("/"))
         {
-	        operand1 = Double.parseDouble(inputOutputField.getText());
-	        counter = 0;
-	        operator = "/";
-	        display = "";
-	        inputOutputField.setText("" + display);
+            operand1 = Double.parseDouble(inputOutputField.getText());
+            counter = 0;
+            operator = "/";
+            display = "";
+            inputOutputField.setText("" + display);
         }
 
         if(e.getActionCommand().equals("="))
-        {
+        { 
             display="";
-	        operand2 = Double.parseDouble(inputOutputField.getText());
-
-	        if(operator.equals("+"))
-	        {
-		        counter = 0;
-		        result = operand1 + operand2;
-		        inputOutputField.setText("" + result);
-		        display = "";
-		        operand1 = null;
-		        operand2 = null;
-	        }
-	        else if(operator.equals("-"))
-	        {
-	            counter=0;
-	            result = operand1 - operand2;
-	            inputOutputField.setText("" + result);
-	            display = "";
-	            operand1 = null;
-	            operand2 = null;
-	        }
-	        else if(operator.equals("*"))
-	        {
-	            counter=0;
-	            result = operand1 * operand2;
-		        inputOutputField.setText("" + result);
-		        display= "";
-		        operand1 = null;
-		        operand2 = null;
+            operand2 = Double.parseDouble(inputOutputField.getText());
+            if(operator.equals("+"))
+            {
+                counter = 0;
+                result = operand1 + operand2;
+                inputOutputField.setText("" + result);
+                display = "";
+                operand1 = null;
+                operand2 = null;
             }
-       	    else if(operator.equals("/"))
-	        {
-	            counter=0;
-		        result = operand1 / operand2;
-	            inputOutputField.setText("" + result);
-		        display = "";
-		        operand1 = null;
-		        operand2 = null;
-	        }
-	    }
-
-	    if(e.getActionCommand().equals("."))
-	    {
-	        if(counter == 0)
-	        {
-	            display += ".";
-	            counter++;
-	            inputOutputField.setText("" + display);
-	        }
-	        else
-	            System.out.print("");
-
-	    }
+            else if(operator.equals("-"))
+            {
+                counter=0;
+                result = operand1 - operand2;
+                inputOutputField.setText("" + result);
+                display = "";
+                operand1 = null;
+                operand2 = null;
+            }
+            else if(operator.equals("*"))
+            {
+                counter=0;
+                result = operand1 * operand2;
+                inputOutputField.setText("" + result);
+                display= "";
+                operand1 = null;
+                operand2 = null;
+            }
+            else if(operator.equals("/"))
+            {
+                counter=0;
+                result = operand1 / operand2;
+                inputOutputField.setText("" + result);
+                display = "";
+                operand1 = null;
+                operand2 = null;
+            }
+        }
+        if(e.getActionCommand().equals("."))
+        {
+            if(counter == 0)
+            {
+                display += ".";
+                counter++;
+                inputOutputField.setText("" + display);
+            }
+            else
+                System.out.print("");
+        }
     }
 }
