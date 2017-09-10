@@ -124,65 +124,64 @@ public class TicTacToe
 
     public static void main(String[] args)
     {
-	      int rowNum, colNum;
+        int rowNum, colNum;
         TicTacToe game = new TicTacToe();
         Scanner keyboard = new Scanner(System.in);
         game.reinitializeGame();
 
         while(!game.isThereAWinner() && !game.isFull())
         {
-	      do
-	      {
-	          System.out.println("X, choose the coordinates" +
-		            " of your move: \nfirst row number (0,1 or 2)," +
-	              "\nthen column number (0,1 or 2)");
-	          do
+            do
             {
-	              rowNum = keyboard.nextInt();
-		            if(rowNum < 0 || rowNum > 2)
-		                System.out.print("\nInvalid row number, enter row number: "); 
-	          } while(rowNum < 0 || rowNum > 2);
-	          do
-            {
-	              colNum = keyboard.nextInt();
-		            if(colNum < 0 || colNum > 2)
-		                System.out.print("\nInvalid column number, enter column number: ");
-	          } while(colNum < 0 || colNum > 2);
-	          if(!game.isOpen(rowNum, colNum))
-		            System.out.println("\nThat position is already taken, try again");
-	      } while(!game.isOpen(rowNum, colNum));
+                System.out.println("X, choose the coordinates" +
+                    " of your move: \nfirst row number (0,1 or 2)," +
+                    "\nthen column number (0,1 or 2)");
+                do
+                {
+                    rowNum = keyboard.nextInt();
+                    if(rowNum < 0 || rowNum > 2)
+                        System.out.print("\nInvalid row number, enter row number: "); 
+                } while(rowNum < 0 || rowNum > 2);
+                do
+                {
+                    colNum = keyboard.nextInt();
+                    if(colNum < 0 || colNum > 2)
+                        System.out.print("\nInvalid column number, enter column number: ");
+                } while(colNum < 0 || colNum > 2);
+            
+                if(!game.isOpen(rowNum, colNum))
+                    System.out.println("\nThat position is already taken, try again");
+            } while(!game.isOpen(rowNum, colNum));
 
-        game.addAMove(rowNum,colNum);
-	      game.displayBoard();
-
-        if(game.isThereAWinner() || game.isFull())
-            break;
-        do {
-	          System.out.println("O, choose the coordinates" +
-	              " of your move: \nfirst row number (0,1 or 2)," +
-		            "\nthen column number (0,1 or 2)");
-	          do
-            {
-	              rowNum = keyboard.nextInt();
-		            if(rowNum < 0 || rowNum > 2)
-		                System.out.print("\nInvalid row number, enter row number: ");  
-	          } while(rowNum < 0 || rowNum > 2);
-	          do
-            {
-	              colNum = keyboard.nextInt();
-		            if(colNum < 0 || colNum > 2)
-		                System.out.print("\nInvalid column number, enter column number: "); 
-	          } while(colNum < 0 || colNum > 2);
-	          if(!game.isOpen(rowNum, colNum))
-	              System.out.println("\nThat position is already taken, try again"); 
-	      } while(!game.isOpen(rowNum, colNum));
-
-        game.addAMove(rowNum,colNum);
-        game.displayBoard();
-    }
-	  if(game.isFull() && !game.isThereAWinner())
-	      System.out.println("\nNo winner\n");
-	  else
-        game.winnerIs();
+            game.addAMove(rowNum,colNum);
+            game.displayBoard();
+            if(game.isThereAWinner() || game.isFull())
+                break;
+            do {
+                System.out.println("O, choose the coordinates" +
+                    " of your move: \nfirst row number (0,1 or 2)," +
+                    "\nthen column number (0,1 or 2)");
+                do
+                {
+                    rowNum = keyboard.nextInt();
+                    if(rowNum < 0 || rowNum > 2)
+                        System.out.print("\nInvalid row number, enter row number: ");  
+                } while(rowNum < 0 || rowNum > 2);
+                do
+                {
+                    colNum = keyboard.nextInt();
+                    if(colNum < 0 || colNum > 2)
+                        System.out.print("\nInvalid column number, enter column number: "); 
+                } while(colNum < 0 || colNum > 2);
+                if(!game.isOpen(rowNum, colNum))
+                    System.out.println("\nThat position is already taken, try again"); 
+            } while(!game.isOpen(rowNum, colNum));
+            game.addAMove(rowNum,colNum);
+            game.displayBoard();
+        }
+        if(game.isFull() && !game.isThereAWinner())
+            System.out.println("\nNo winner\n");
+        else
+            game.winnerIs();
     }
 }
