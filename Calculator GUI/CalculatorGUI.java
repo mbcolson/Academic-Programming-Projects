@@ -172,25 +172,25 @@ public class CalculatorGUI extends JFrame implements ActionListener
         }
 
         if(e.getActionCommand().equals("-"))
-	    {
-	        operand1 = Double.parseDouble(inputOutputField.getText());
-            counter = 0;
-	        operator = "-";
-	        display = "";
-	        inputOutputField.setText("" + display);
+        {
+            operand1 = Double.parseDouble(inputOutputField.getText());
+	    counter = 0;
+            operator = "-";
+            display = "";
+            inputOutputField.setText("" + display);
         }
 
         if(e.getActionCommand().equals("*"))
-	    {
-	        operand1 = Double.parseDouble(inputOutputField.getText());
-	        counter = 0;
-	        operator = "*";
-	        display = "";
-	        inputOutputField.setText("" + display);
+        {
+            operand1 = Double.parseDouble(inputOutputField.getText());
+            counter = 0;
+            operator = "*";
+            display = "";
+            inputOutputField.setText("" + display);
         }
 
         if(e.getActionCommand().equals("/"))
-	    {
+        {
 	        operand1 = Double.parseDouble(inputOutputField.getText());
 	        counter = 0;
 	        operator = "/";
