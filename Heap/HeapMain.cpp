@@ -22,6 +22,5 @@ int main()
      i1 = h.Retrieve();
      cout << "h.Retrieve: " << i1 << endl;
      
-     system("pause");
      return 0;
 }
