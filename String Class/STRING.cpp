@@ -106,12 +106,12 @@ STRING::operator int() const
      
      for(int i = 0; i < size; i++)
      {
-          if(st[i] == '-') {
-		          is_str_neg = true;
-		          break;
+          if(st[i] == '-')
+              is_str_neg = true;
+              break;
           } 
           else
-		          is_str_neg = false;
+              is_str_neg = false;
      }
      
      for(int i = 0; i < size; i++)
