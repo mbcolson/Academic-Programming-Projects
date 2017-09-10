@@ -11,7 +11,7 @@ public class HeadsVTails extends Frame
     public HeadsVTails()
     {
         Random generator = new Random();
-	      Scanner keyboard = new Scanner(System.in);
+        Scanner keyboard = new Scanner(System.in);
 
         System.out.print("How many coin flips: ");
         numberOfFlips = keyboard.nextInt();
