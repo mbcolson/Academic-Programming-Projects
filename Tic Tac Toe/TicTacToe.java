@@ -35,8 +35,8 @@ public class TicTacToe
     {
         if(turns % 2 == 0)
             return 'O';
-	      else
-	          return 'X';
+        else
+            return 'X';
     }
 
     public boolean isThereAWinner()
