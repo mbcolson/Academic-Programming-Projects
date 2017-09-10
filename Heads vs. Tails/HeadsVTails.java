@@ -37,9 +37,9 @@ public class HeadsVTails extends Frame
         percentOfHeads *= 1.5;
         percentOfTails *= 1.5;
 
-		    setSize( 325, 325 );
-		    setTitle("Heads vs. Tails");
-		    setVisible(true);
+        setSize( 325, 325 );
+        setTitle("Heads vs. Tails");
+        setVisible(true);
         setResizable(false);
 
         WindowDestroyer myListener = new WindowDestroyer();
@@ -75,11 +75,11 @@ public class HeadsVTails extends Frame
 
     public class WindowDestroyer extends WindowAdapter
     {
-		    public void windowClosing(WindowEvent e)
-		    {
-			      System.exit(0);
-		    }
-	  }
+        public void windowClosing(WindowEvent e)
+        {
+            System.exit(0);
+        }
+    }
 
     public static void main(String[] args)
     {
