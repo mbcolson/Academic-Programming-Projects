@@ -55,8 +55,8 @@ public class ball extends JFrame
 
     public void paint(Graphics g)
     {
-    	  g.clearRect(0,0,500,500);
-    	  g.setColor(Color.red);
+        g.clearRect(0,0,500,500);
+        g.setColor(Color.red);
         g.fillOval(x_location,y_location,70,70);
         g.setColor(Color.blue);
         g.fillRect(200,200, 70,70);
@@ -64,19 +64,19 @@ public class ball extends JFrame
 
     public void moveBall() throws Exception
     {
-		    x_location += dx;
-		    y_location += dy;
-		    Thread.sleep(8);
-		    repaint();
-	  }
+        x_location += dx;
+        y_location += dy; 
+        Thread.sleep(8);
+        repaint();
+    }
 
     public void swapSignOfX()
-	  {
-		    dx = -dx;
-	  }
-
-	  public void swapSignOfY()
-	  {
-		    dy = -dy;
-	  }
+    {
+        dx = -dx;
+    }
+    
+    public void swapSignOfY()
+    {
+        dy = -dy;
+    }
 }
