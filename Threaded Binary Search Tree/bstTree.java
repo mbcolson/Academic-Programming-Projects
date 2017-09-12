@@ -27,80 +27,80 @@ loop:   while (true)
                             continue;
 			T.insert(i); T.draw(); continue;
 		case 2: System.out.print("Number to be deleted: "); System.out.flush();
-			                  cnt = System.in.read(buf); s = new String(buf, 0, cnt-2);
-         			          if (!s.equals("")) 
+		        cnt = System.in.read(buf); s = new String(buf, 0, cnt-2);
+         	        if(!s.equals("")) 
                             i = Integer.valueOf(s).intValue(); 
                         else 
                             continue;
-			                  T.delete(i); T.draw(); continue;
-		            case 3: break loop;
-		        }
-		    }
-		    System.exit(0);
-	   }
+			T.delete(i); T.draw(); continue;
+                case 3: break loop;
+            } 
+        }
+        System.exit(0);
+    }
 }
 
 class TBST extends BST
 {
     public void insert(int n)
     {
-		    TreeNode cur;
-		    TreeNode pcur;
-		    TreeNode node = new TreeNode();
-		    boolean isThread = false;
+        TreeNode cur;
+	TreeNode pcur;
+	TreeNode node = new TreeNode();
+	boolean isThread = false;
         boolean duplicate = false;
-		    node.data = n;
+	node.data = n;
         cur = root;
         pcur = null;
 
-		    while(cur!=null && isThread == false)
-		    {
-			      if(n < cur.data)
-			      {
-				        pcur = cur;
-				        if(pcur.lt == true)
-				            isThread = true;
-				        cur = cur.left;
-			      }
-			      else if(n > cur.data)
-			      {
-				        pcur = cur;
-				        if(pcur.rt == true)
-				            isThread = true;
-				        cur = cur.right;
-			      }
-			      else
-			      {
-			          duplicate = true;
-			          break;
-			      }
-		    }
+	while(cur!=null && isThread == false)
+	{
+	    if(n < cur.data)
+	    {
+	        pcur = cur;
+	        if(pcur.lt == true)
+	            isThread = true;
+	        cur = cur.left;
+	    }
+	    else if(n > cur.data)
+	    {
+	        pcur = cur;
+		if(pcur.rt == true)
+		    isThread = true;
+		cur = cur.right;
+	    }
+	    else
+	    {
+	        duplicate = true;
+	        break;
+	    }
+	}
         if(!duplicate)
         {
-	    	    if(root != null)
-	    	    {
-	    	        if (n < pcur.data)     // attaching a left child
-	    	        {
-	    		          node.left = pcur.left;
-	    	            node.right = pcur;
+	    if(root != null)
+	    {
+	        if (n < pcur.data)     // attaching a left child
+	        {
+	            node.left = pcur.left;
+	    	    node.right = pcur;
                     node.lt = node.rt = true;
-	                  pcur.left = node;
+	            pcur.left = node;
                     pcur.lt = false;
-	              }
-	    	        else
-	    	        {                      // attaching a right child
+	        }
+	        else
+	    	{                      // attaching a right child
                     node.right = pcur.right;
                     node.left = pcur;
                     node.lt = node.rt = true;
-	                  pcur.right = node;
+	            pcur.right = node;
                     pcur.rt = false;
-	    	        }
+	        }
             }
             else
             {
-	    		      root = node;
-	    	    }
-	      }
+	        root = node;
+            }
+	}
     }
 
     public void delete(int n)
