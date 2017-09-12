@@ -35,6 +35,6 @@ loop:	while(true)
                 case 3: break loop;
 	    }
 	}
-    System.exit(0);
+        System.exit(0);
     }
 }
