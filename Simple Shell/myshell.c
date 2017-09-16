@@ -72,7 +72,10 @@ int main()
         if(pipepos)
         {
             if (pipe(filedes) == -1) 
-		perror("pipe"); return -1;
+	    {	    
+		perror("pipe"); 
+		return -1;
+	    }
             if(fork() == 0)
             {
                 close(filedes[0]);
