@@ -52,7 +52,7 @@ class TBST extends BST
 	node.data = n;
         cur = root;
         pcur = null;
-	while(cur!=null && isThread == false)
+	while(cur != null && isThread == false)
 	{
 	    if(n < cur.data)
 	    {
@@ -145,7 +145,7 @@ class TBST extends BST
 	        delete(temp.data);
 	        cur.data=d;
 	    }
-	    else if((cur.lt == true && cur.rt==true)||(cur.lt==true && cur.right==null)||(cur.rt==true&&cur.left==null))     // deleting a leaf
+	    else if((cur.lt == true && cur.rt == true) || (cur.lt == true && cur.right == null) || (cur.rt == true && cur.left == null))     // deleting a leaf
 	    {
 	        if(pcur.left == cur)
             	{
