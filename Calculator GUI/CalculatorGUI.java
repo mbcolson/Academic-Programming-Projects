@@ -23,6 +23,7 @@ public class CalculatorGUI extends JFrame implements ActionListener
         setResizable(false);
         Container contentPane = getContentPane();
         contentPane.setLayout(new BorderLayout());
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         JPanel buttonPanel = new JPanel();
         buttonPanel.setLayout(new GridLayout(4,4));
