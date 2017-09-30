@@ -17,7 +17,7 @@ BSTree::~BSTree()
 
 Data _retrieve(const BSTree::node* n, const KeyType& key) 
 {
-    if (n == NULL)
+    if(n == NULL)
     {
          Data d;
          d.i =- 1;
@@ -44,7 +44,7 @@ Data BSTree::Retrieve(const KeyType& item) const
 
 void _insert(BSTree::node*& n, const Data& item)
 {
-     if (n == NULL)
+     if(n == NULL)
      {
           n = new BSTree::node;
           n->LC = NULL;
@@ -165,7 +165,7 @@ unsigned _depth(const BSTree::node* n)
 {
      unsigned left_height, right_height;    
      
-     if(n == NULL || n->RC == NULL && n->LC == NULL)
+     if(n == NULL || (n->RC == NULL && n->LC == NULL))
           return 0;
      else 
      {
@@ -181,5 +181,5 @@ unsigned _depth(const BSTree::node* n)
 //POST: FCTVAL == depth of the tree
 unsigned BSTree::depth() const
 {
-     _depth(root);
+     return _depth(root);
 }
