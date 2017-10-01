@@ -56,11 +56,11 @@ ItemType List::CurrentItem(void)
         List cursor is reset to the head position. */
 void List::Delete()
 {
-	 if(IsEmpty())
-	 {
-		 cout << "Error: list is empty, cannot delete" << endl;
-		 return;
-	 }
+     if(IsEmpty())
+     {
+         cout << "Error: list is empty, cannot delete" << endl;
+         return;
+     }
      node *temp = new node;
      temp = head;
 
@@ -78,7 +78,7 @@ void List::Delete()
           delete cur;
           cur = temp->next;
      }
-     if(cur == NULL && !IsEmpty())
+     if(EndOfList() && !IsEmpty())
          Reset();
 }
 
