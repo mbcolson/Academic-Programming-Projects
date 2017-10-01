@@ -1,5 +1,3 @@
-#include <cstdlib>
-#include <iostream>
 #include "List.h"
 
 using namespace std;
@@ -17,8 +15,8 @@ int main()
     l1.Insert(8);
     cout << "l1.Insert(6)" << endl;
     cout << "l1.Insert(2)" << endl;
+    cout << "l1.Insert(3)" << endl;
     cout << "l1.Insert(8)" << endl;
-    cout << "l1.Insert(2)" << endl;
     l1.Display();
     l1.Delete();
     cout << "l1.Delete()" << endl;
