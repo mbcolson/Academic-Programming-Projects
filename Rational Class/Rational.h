@@ -1,6 +1,7 @@
 #ifndef _RATIONAL_H_
 #define _RATIONAL_H_
-#include <iostream>
+
+#include <bits/stdc++.h>
 using namespace std;
 
 class Rational
