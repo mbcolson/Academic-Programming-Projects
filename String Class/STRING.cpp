@@ -1,7 +1,4 @@
 #include "STRING.h"
-#include <string.h>
-#include <iostream>
-#include <conio.h>
 using namespace std;
 
 STRING::STRING()
