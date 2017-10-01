@@ -1,5 +1,4 @@
 #include "List.h"
-#include <iostream>
 using namespace std;
 
 //Post: an empty List is created && EndOfLIst()
