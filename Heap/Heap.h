@@ -1,6 +1,8 @@
 #ifndef HEAP_H
 #define HEAP_H
 
+#include <bits/stdc++.h>
+
 const int MAX_ITEMS = 10;
 typedef int Itemtype;
 
