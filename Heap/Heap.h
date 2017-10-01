@@ -1,6 +1,3 @@
-#include <iostream>
-using namespace std;
-
 #ifndef HEAP_H
 #define HEAP_H
 
