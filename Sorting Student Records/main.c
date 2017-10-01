@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "student.h"
+
 int cmpStudent(const struct Student *pA, const struct Student *pB)
 {
     return strncmp(pA->name, pB->name, sizeof(pA->name));
