@@ -1,5 +1,4 @@
 #include "Rational.h"
-#include <iostream>
 using namespace std;
 
 //default constructor
