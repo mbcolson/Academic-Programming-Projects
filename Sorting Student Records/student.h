@@ -2,10 +2,10 @@
 
 struct Student
 {
-  char name[32];
-  int score;
-  struct Student *pLess;
-  struct Student *pMore;
+    char name[32];
+    int score;
+    struct Student *pLess;
+    struct Student *pMore;
 };
 
 int readStudent(struct Student *pRecord);
