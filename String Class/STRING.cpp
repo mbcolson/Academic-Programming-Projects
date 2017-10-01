@@ -275,7 +275,7 @@ istream& operator>> (istream& is, STRING& s)
      {
      	is.get(ch);
      	if(isspace(ch, is.getloc()) || is.eof())
-     		break;
+     	    break;
         inS += ch;
      }
      s = inS;
