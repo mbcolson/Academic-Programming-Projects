@@ -2,27 +2,16 @@ void swapStudent(struct Student *pA, struct Student *pB);
 
 #include "student.inc"
 
-.text
-
-.global swapStudent
-
-swapStudent:
 # pseudocode:
-
 #   local struct Student x
-
 #   x = *pA
-
 #   *pA = *pB
-
 #   *pB = x
 
-ret
-
-
 .text
 .global swapStudent
 swapStudent:
+
 oldEbp = 0
 retAddr = oldEbp + 4
 pA = retAddr + 4
@@ -44,4 +33,5 @@ movl %edx,(%ecx)
 
 movl %ebp,%esp
 popl %ebp
+
 ret 
