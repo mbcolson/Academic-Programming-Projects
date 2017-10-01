@@ -1,5 +1,4 @@
 #include "Heap.h"
-#include <iostream>
 using namespace std;
 
 Heap::Heap()
