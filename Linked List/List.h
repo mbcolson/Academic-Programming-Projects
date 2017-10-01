@@ -1,8 +1,7 @@
-#include <iostream>
-#include <cstdlib>
-
 #ifndef LIST_H
 #define LIST_H
+
+#include <bits/stdc++.h>
 
 typedef int ItemType;
 
