@@ -7,7 +7,7 @@ int main()
           r8(3,1);
      long l1 = 3, l2 = 4, l3 = 7;
      
-     cout << endl << "Enter a rational to store in r5: ";
+     cout << endl << "Enter a rational to store in r5 (example: 5/7): ";
      cin >> r5;
      cout << "r5(in reduced form) is: " << r5 << endl;
      cout << "r1 is: " << r1 << endl;
