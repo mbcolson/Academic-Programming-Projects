@@ -1,8 +1,7 @@
-#include <iostream>
-using namespace std;
-
 #ifndef _STRING_H_DEF_
 #define _STRING_H_DEF_
+
+#include <bits/stdc++.h>
 
 /* class invariant: (size == 0 and st == NULL) or size == number of allocated 
                     bytes pointed to by st */
