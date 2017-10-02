@@ -3,33 +3,33 @@ using namespace std;
 
 void fun(const Data& item)
 {
-	cout << item.k << " ";
+    cout << item.k << " ";
 }
 
 int main()
 {
-	BSTree bstree;
-	cout << "BSTree bstree;" << endl << endl;
+    BSTree bstree;
+    cout << "BSTree bstree;" << endl << endl;
     srand(time(NULL));
     int cnt = 0;
-	while(cnt < 15)
-	{
+    while(cnt < 15)
+    {
         Data d;
         d.i = rand() % 100;
         d.k = rand() % 30;
         if(bstree.Insert(d))
         {
-        	cout << "Insert of d.i = " << d.i << ", d.k = " << d.k
-        		 << " completed successfully" << endl;
-        	cnt++;
+            cout << "Insert of d.i = " << d.i << ", d.k = " << d.k
+                 << " completed successfully" << endl;
+            cnt++;
         }
         else
         {
             cout << "Insert of d.i = " << d.i << ", d.k = " << d.k
             	 << " failed" << endl;
         }
-	}
-	cout << endl << "bstree.InOrder(fun);" << endl;
+    }
+    cout << endl << "bstree.InOrder(fun);" << endl;
     bstree.InOrder(fun);
     cout << endl << endl << "bstree.PreOrder(fun);" << endl;
     bstree.PreOrder(fun);
@@ -68,12 +68,13 @@ int main()
         Data d = bstree.Retrieve(key);
         if(d.k != -1)
         {
-         	cout << "Data item with key = " << key << " and info = "
-         	     << d.i << " retrieved successfully" << endl;
-           	cnt++;
+            cout << "Data item with key = " << key << " and info = "
+                 << d.i << " retrieved successfully" << endl;
+            cnt++;
         }
         else
             cout << "Data item with key = " << key << " failed" << endl;
     }
-	return 0;
+	
+    return 0;
 }
