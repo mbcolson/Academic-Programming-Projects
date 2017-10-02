@@ -46,7 +46,7 @@ void BSTree::PostOrder(void (*f)(const Data&))
     _postorder(root, f);
 }
 
-//PRE: Node
+//PRE: None
 //POST: FCTVAL == depth of the tree
 int BSTree::depth() const
 {
