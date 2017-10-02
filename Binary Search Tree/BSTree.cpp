@@ -12,7 +12,7 @@ BSTree::~BSTree()
 //POST: FCTVAL == data item with this key returned
 Data BSTree::Retrieve(const KeyType& key) const
 {
-	return _retrieve(root, key);
+     return _retrieve(root, key);
 }
 
 //PRE: Item with key is not already in the tree
@@ -38,12 +38,12 @@ void BSTree::InOrder(void (*f)(const Data&))
 
 void BSTree::PreOrder(void (*f)(const Data&))
 {
-	 _preorder(root, f);
+    _preorder(root, f);
 }
 
 void BSTree::PostOrder(void (*f)(const Data&))
 {
-	 _postorder(root, f);
+    _postorder(root, f);
 }
 
 //PRE: Node
@@ -55,30 +55,30 @@ int BSTree::depth() const
 
 Data _retrieve(const BSTree::node* node, const KeyType& key)
 {
-	if(node == NULL)
-	{
-		Data d;
-		d.i = -1;
-		d.k = -1;
-		return d;
-	}
-	if(node->info.k == key)
-	    return node->info;
-	else if(node->info.k > key)
-		_retrieve(node->left, key);
-	else
-		_retrieve(node->right, key);
+    if(node == NULL)
+    {
+        Data d;
+        d.i = -1;
+        d.k = -1;
+        return d;
+    }
+    if(node->info.k == key)
+        return node->info;
+    else if(node->info.k > key)
+        _retrieve(node->left, key);
+    else
+        _retrieve(node->right, key);
 }
 
 bool _insert(BSTree::node*& node, const Data& item)
 {
-	if(node == NULL)
-	{
-		node = new BSTree::node;
-		node->left = node->right = NULL;
-		node->info = item;
-		return true;
-	}
+    if(node == NULL)
+    {
+        node = new BSTree::node;
+        node->left = node->right = NULL;
+        node->info = item;
+        return true;
+    }
     if(node->info.k < item.k)
         _insert(node->right, item);
     else if(node->info.k > item.k)
@@ -89,11 +89,11 @@ bool _insert(BSTree::node*& node, const Data& item)
 
 BSTree::node* _findMin(BSTree::node* node)
 {
-	if(node == NULL)
-		return NULL;
-	if(node->left == NULL)
-		return node;
-	return _findMin(node->left);
+    if(node == NULL)
+        return NULL;
+    if(node->left == NULL)
+        return node;
+    return _findMin(node->left);
 }
 
 bool _delete(BSTree::node*& node, const KeyType& key)
@@ -113,9 +113,9 @@ bool _delete(BSTree::node*& node, const KeyType& key)
     {
     	BSTree::node *n = node;
     	if(node->left != NULL)
-    		node = node->left;
+    	    node = node->left;
     	else
-    		node = node->right;
+    	    node = node->right;
     	delete n;
     }
     return true;
@@ -123,8 +123,8 @@ bool _delete(BSTree::node*& node, const KeyType& key)
 
 void _inorder(const BSTree::node* node, void(*f)(const Data&))
 {
-	if(node == NULL)
-		return;
+    if(node == NULL)
+        return;
     _inorder(node->left, f);
     f(node->info);
     _inorder(node->right, f);
@@ -132,26 +132,26 @@ void _inorder(const BSTree::node* node, void(*f)(const Data&))
 
 void _preorder(const BSTree::node* node, void(*f)(const Data&))
 {
-	if(node == NULL)
-		return;
-	f(node->info);
-	_preorder(node->left, f);
-	_preorder(node->right, f);
+    if(node == NULL)
+	return;
+    f(node->info);
+    _preorder(node->left, f);
+    _preorder(node->right, f);
 }
 
 void _postorder(const BSTree::node* node, void(*f)(const Data&))
 {
-	if(node == NULL)
-		return;
-	_postorder(node->left, f);
-	_postorder(node->right, f);
-	f(node->info);
+    if(node == NULL)
+        return;
+    _postorder(node->left, f);
+    _postorder(node->right, f);
+    f(node->info);
 }
 
 int _depth(const BSTree::node* node)
 {
-	if(node == NULL)
-		return 0;
+    if(node == NULL)
+        return 0;
     return 1 + max(_depth(node->left), _depth(node->right));
 }
 
