@@ -55,7 +55,7 @@ class BSTree
     void InOrder(void (*)(const Data&));
     void PreOrder(void (*)(const Data&));
     void PostOrder(void (*)(const Data&));
-    //PRE: Node
+    //PRE: None
     //POST: FCTVAL == depth of the tree
     int depth() const;
 };
