@@ -37,8 +37,8 @@ loop:   while(true)
                             continue;
 			    
                         T.insert(i); 
-			T.draw(); 
-			continue;
+                        T.draw(); 
+                        continue;
 		case 2: System.out.print("Number to be deleted: "); 
                         System.out.flush();
                         cnt = System.in.read(buf); 
