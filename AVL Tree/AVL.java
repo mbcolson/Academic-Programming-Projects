@@ -56,7 +56,7 @@ class AVL extends BST
             
 	    while(cur != null && cur.data != n)
             {
-                if (n < cur.data)
+                if(n < cur.data)
                 {
                     cur.bf++;
                     cur = cur.left;
@@ -67,6 +67,7 @@ class AVL extends BST
                     cur = cur.right;
                 }
             }
+	    
             if(pivot != null && (pivot.bf == 2 || pivot.bf == -2))
             {
                 if(n < pivot.data && n < pivot.left.data)    // LL rotation
