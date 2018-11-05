@@ -129,45 +129,52 @@ class TBST extends BST
     public void delete(int n)
     {
         TreeNode cur, pcur, temp, ptemp;
-	cur = root;
-	pcur = null;
+        cur = root;
+        pcur = null;
+	
         while(cur != null)
-	{
-	    if(cur.data == n)
-	        break;
-	    if(n < cur.data)
-	    {
-	        pcur = cur;
-		if(!cur.lt)
-		    cur = cur.left;
-	        else 
+        {
+            if(cur.data == n)
+                break;
+	    
+            if(n < cur.data)
+            {
+                pcur = cur;
+		
+                if(!cur.lt)
+                    cur = cur.left;
+                else 
                     cur = null;
-	    }
-	    else
-	    {
-		pcur = cur;
-		if(!cur.rt)
-		    cur = cur.right;
-		else 
+            }
+            else
+            {
+                pcur = cur;
+		
+                if(!cur.rt)
+                    cur = cur.right;
+                else 
                     cur = null;
             }
         }
-	if(cur == root && cur.right == null && cur.left == null)
-	    root = null;  
-	else if(cur != null)
-	{
-	    if(cur.lt == false && cur.rt == false && cur.right != null && cur.left != null)  // 2 children
-	    {
-                temp = cur.right; ptemp = cur;
-		while(temp.lt == false)
-		{
-		    ptemp = temp;
-		    temp = temp.left;
-		}
-	        int d;
-	        d = temp.data;
-	        delete(temp.data);
-	        cur.data=d;
+	
+        if(cur == root && cur.right == null && cur.left == null)
+            root = null;  
+        else if(cur != null)
+        {
+            if(cur.lt == false && cur.rt == false && cur.right != null && cur.left != null)  // 2 children
+            {
+                temp = cur.right; 
+                ptemp = cur;
+		
+                while(temp.lt == false)
+                {
+                    ptemp = temp;
+                    temp = temp.left;
+                }
+		
+                int d = temp.data;
+                delete(temp.data);
+                cur.data = d;
 	    }
 	    else if((cur.lt == true && cur.rt == true) || (cur.lt == true && cur.right == null) || (cur.rt == true && cur.left == null))     // deleting a leaf
 	    {
