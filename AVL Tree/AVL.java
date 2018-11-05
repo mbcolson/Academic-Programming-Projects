@@ -152,12 +152,12 @@ class AVL extends BST
                     {
 			pB.bf = -1;
 			pivot.bf = 0;
-		    } 
-		    else 
-		    {
-			pB.bf = 0;
-			pivot.bf = 1;
-		    }
+		     } 
+		     else 
+		     {
+			 pB.bf = 0;
+			 pivot.bf = 1;
+		     }
                 }
                 else if(n > pivot.data && n > pivot.right.data)    // RR rotation
                 {
