@@ -27,7 +27,7 @@ loop:   while(true)
             switch(i) 
             {
                 case 1: System.out.print("Number to be inserted: "); 
-		        System.out.flush();
+                        System.out.flush();
                         cnt = System.in.read(buf); 
                         s = new String(buf, 0, cnt-2);
 		
@@ -37,22 +37,22 @@ loop:   while(true)
                             continue;
 			    
                         T.insert(i); 
-                        T.draw(); 
-                        continue;
+			T.draw(); 
+			continue;
 		case 2: System.out.print("Number to be deleted: "); 
                         System.out.flush();
                         cnt = System.in.read(buf); 
                         s = new String(buf, 0, cnt-2);
          	        
                         if(!s.equals("")) 
-			    i = Integer.valueOf(s).intValue(); 
+                            i = Integer.valueOf(s).intValue(); 
                         else 
                             continue;
 			    
                         T.delete(i); 
                         T.draw(); 
                         continue;
-               case 3: break loop;
+                case 3: break loop;
 	    }
 	}
        System.exit(0);
