@@ -49,23 +49,23 @@ int main()
     cout << "bstree.Delete(5)" << endl;
 	
     if(bstree.Delete(5))
-    	cout << "Delete of key 5 was successful" << endl;
+        cout << "Delete of key 5 was successful" << endl;
     else
-    	cout << "Delete of key 5 failed" << endl;
+        cout << "Delete of key 5 failed" << endl;
 
     cout << endl << "bstree.Delete(10)" << endl;
 	
     if(bstree.Delete(10))
-       	cout << "Delete of key 10 was successful" << endl;
+        cout << "Delete of key 10 was successful" << endl;
     else
-       	cout << "Delete of key 10 failed" << endl;
+        cout << "Delete of key 10 failed" << endl;
 
     cout << endl << "bstree.Delete(13)" << endl;
 	
     if(bstree.Delete(13))
-      	cout << "Delete of key 13 was successful" << endl;
+        cout << "Delete of key 13 was successful" << endl;
     else
-       	cout << "Delete of key 13 failed" << endl;
+        cout << "Delete of key 13 failed" << endl;
 
     cout << endl << "bstree.InOrder(fun);" << endl;
 	
