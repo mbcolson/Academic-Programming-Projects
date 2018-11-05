@@ -39,7 +39,7 @@ loop:   while(true)
                         T.insert(i); 
                         T.draw(); 
                         continue;
-		case 2: System.out.print("Number to be deleted: "); 
+                case 2: System.out.print("Number to be deleted: "); 
                         System.out.flush();
                         cnt = System.in.read(buf); 
                         s = new String(buf, 0, cnt-2);
