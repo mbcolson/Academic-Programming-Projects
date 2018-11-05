@@ -14,7 +14,7 @@ class AVL extends BST
         pivot = root;
         parent_pivot = null;
 	
-        while (cur != null)
+        while(cur != null)
         {
             if(cur.bf != 0)
             {
@@ -38,6 +38,7 @@ class AVL extends BST
                 break;
             }
         }
+	
         if(!duplicate)
         {
             if(root != null)
@@ -50,11 +51,12 @@ class AVL extends BST
             else
                 root = node;
         }
+	
         if(!duplicate)
         {
             cur = pivot;
             
-	    while(cur != null && cur.data != n)
+	     while(cur != null && cur.data != n)
             {
                 if(n < cur.data)
                 {
