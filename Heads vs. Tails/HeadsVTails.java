@@ -19,6 +19,7 @@ public class HeadsVTails extends Frame
         for(int i = 0; i < numberOfFlips; i++)
         {
             randomNumber = (generator.nextInt(100) % 2);
+            
             if(randomNumber == 1)
                 numberOfHeads++;
             else
@@ -51,7 +52,7 @@ public class HeadsVTails extends Frame
         g.setColor( Color.black);
 
         g.drawLine( 60, 250, 260, 250);  // horizontal axis
-        g.drawLine( 60, 250,60, 100);   // vertical axis
+        g.drawLine( 60, 250,60, 100);    // vertical axis
 
         g.drawLine( 55,175,65,175);
 
