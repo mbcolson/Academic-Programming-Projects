@@ -7,6 +7,7 @@ public class avlTest
         int i, num = 0;
         AVL T = new AVL(); T.draw();
         byte [] buf = new byte[80];
+        
 loop:   while(true) 
         {
 	    System.out.println("1: Insert ");  System.out.println("2: Delete ");
