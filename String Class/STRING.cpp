@@ -423,105 +423,110 @@ bool operator< (const STRING& lhs, const STRING& rhs)
 
 bool operator< (const STRING& lhs, char* c)
 {
-     return(lhs < STRING(c));
+    return(lhs < STRING(c));
 }
 
 bool operator< (const char* c, const STRING& rhs)
 {
-     return(STRING(c) < rhs);
+    return(STRING(c) < rhs);
 }
 
 bool operator< (const char c, const STRING& rhs)
 {
-     return(STRING(c) < rhs);
+    return(STRING(c) < rhs);
 }
 
 bool operator< (const STRING& lhs, const char c)
 {
-     return(lhs < STRING(c));
+    return(lhs < STRING(c));
 }
 
 bool operator<= (const STRING& lhs, const STRING& rhs)
 {
-     return((lhs < rhs) || (lhs == rhs));
+    return((lhs < rhs) || (lhs == rhs));
 }
 
 bool operator<= (const STRING& lhs, const char* c)
 {
-     return((lhs < STRING(c)) || (lhs == STRING(c)));
+    return((lhs < STRING(c)) || (lhs == STRING(c)));
 }
 
 bool operator<= (const char* c, const STRING& rhs)
 {
-     return((STRING(c) < rhs) || (STRING(c) == rhs));
+    return((STRING(c) < rhs) || (STRING(c) == rhs));
 }
 
 bool operator<= (const char c, const STRING& rhs)
 {
-     return((STRING(c) < rhs) || (STRING(c) == rhs));
+    return((STRING(c) < rhs) || (STRING(c) == rhs));
 }
 
 bool operator<= (const STRING& lhs, const char c)
 {
-     return((lhs < STRING(c)) || (lhs == STRING(c)));
+    return((lhs < STRING(c)) || (lhs == STRING(c)));
 }
 
 bool operator>= (const STRING& lhs, const STRING& rhs)
 {
-     return((lhs < rhs) || (lhs == rhs));
+    return((lhs < rhs) || (lhs == rhs));
 }
 
 bool operator>= (const STRING& lhs, const char* c)
 {
-     return((lhs > STRING(c)) || (lhs == STRING(c)));
+    return((lhs > STRING(c)) || (lhs == STRING(c)));
 }
 
 bool operator>= (const char* c, const STRING& rhs)
 {
-     return(((STRING(c) > rhs) || (STRING(c) == rhs)));
+    return(((STRING(c) > rhs) || (STRING(c) == rhs)));
 }
 
 bool operator>= (const char c, const STRING& rhs)
 {
-     return(((STRING(c) > rhs) || (STRING(c) == rhs)));
+    return(((STRING(c) > rhs) || (STRING(c) == rhs)));
 }
 
 bool operator>= (const STRING& lhs, const char c)
 {
-     return (lhs > STRING(c) || lhs == STRING(c));
+    return (lhs > STRING(c) || lhs == STRING(c));
 }
 
 STRING operator+ (const STRING& lhs, const STRING& rhs)
 {
-     STRING temp = lhs;
-     temp += rhs;
-     return temp;
+    STRING temp = lhs;
+    temp += rhs;
+	
+    return temp;
 }
 
 STRING operator+ (const char* c, const STRING& rhs)
 {
-     STRING temp = STRING(c);
-     temp += rhs;
-     return temp;
+    STRING temp = STRING(c);
+    temp += rhs;
+	
+    return temp;
 }
 
 STRING operator+ (const STRING& lhs, const char* c)
 {
-     STRING temp = lhs;
-     temp += STRING(c);
-     return temp;
+    STRING temp = lhs;
+    temp += STRING(c);
+	
+    return temp;
 }
 
 STRING operator+ (const char c, const STRING& rhs)
 {
-     STRING temp = STRING(c);
-     temp += rhs;
-     return temp;
+    STRING temp = STRING(c);
+    temp += rhs;
+	
+    return temp;
 }
 
 STRING operator+ (const STRING& lhs, const char c)
 {
-     STRING temp = lhs;
-     temp += STRING(c);
-     return temp;
+    STRING temp = lhs;
+    temp += STRING(c);
+	
+    return temp;
 }
