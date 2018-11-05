@@ -74,8 +74,8 @@ class AVL extends BST
             {
                 if(n < pivot.data && n < pivot.left.data)    // LL rotation
                 {
-	            System.out.println("LL rotation");
-		    pB = pivot.left;
+	             System.out.println("LL rotation");
+		     pB = pivot.left;
                     pivot.left = pB.right;
                     pB.right = pivot;
 		    
@@ -161,8 +161,8 @@ class AVL extends BST
                 }
                 else if(n > pivot.data && n > pivot.right.data)    // RR rotation
                 {
-		    System.out.println("RR rotation");
-		    pB = pivot.right;
+		     System.out.println("RR rotation");
+		     pB = pivot.right;
                     pivot.right = pB.left;
                     pB.left = pivot;
 		    
