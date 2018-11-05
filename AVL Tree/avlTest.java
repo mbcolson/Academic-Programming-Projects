@@ -46,9 +46,9 @@ loop:   while(true)
                         T.delete(i); 
                         T.draw(); 
                         continue;
-                case 3: break loop;
+               case 3: break loop;
 	    }
 	}
-        System.exit(0);
+       System.exit(0);
     }
 }
