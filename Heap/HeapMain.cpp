@@ -17,7 +17,9 @@ int main()
      
      cout << "Heap is full: " << (h.IsFull() ? "true" : "false") << endl;
      cout << "Heap is empty: " << (h.IsEmpty() ? "true" : "false") << endl;
+     
      i1 = h.Retrieve();
+     
      cout << "h.Retrieve: " << i1 << endl;
      
      return 0;
