@@ -10,9 +10,14 @@ public class avlTest
         
 loop:   while(true) 
         {
-	    System.out.println("1: Insert ");  System.out.println("2: Delete ");
-	    System.out.println("3: exit");  System.out.print("Choice: "); System.out.flush();
-	    int cnt = System.in.read(buf); String s = new String(buf, 0, cnt-2);
+	    System.out.println("1: Insert ");  
+            System.out.println("2: Delete ");
+	    System.out.println("3: exit");  
+            System.out.print("Choice: "); 
+	    System.out.flush();
+            
+            int cnt = System.in.read(buf); 
+            String s = new String(buf, 0, cnt-2);
 	
            if(!s.equals(""))
                i = Integer.valueOf(s).intValue();  
