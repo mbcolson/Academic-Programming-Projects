@@ -13,13 +13,13 @@ loop:   while(true)
 	    System.out.println("3: exit");  System.out.print("Choice: "); System.out.flush();
 	    int cnt = System.in.read(buf); String s = new String(buf, 0, cnt-2);
 	
-            if(!s.equals(""))
-                i = Integer.valueOf(s).intValue();  
-            else 
-                continue;
+           if(!s.equals(""))
+               i = Integer.valueOf(s).intValue();  
+           else 
+               continue;
 	
 	    switch(i) 
-            {
+           {
 	        case 1: System.out.print("Number to be inserted: "); 
 		        System.out.flush();
                         cnt = System.in.read(buf); 
@@ -46,7 +46,7 @@ loop:   while(true)
                         T.delete(i); 
                         T.draw(); 
                         continue;
-		    case 3: break loop;
+                case 3: break loop;
 	    }
 	}
         System.exit(0);
