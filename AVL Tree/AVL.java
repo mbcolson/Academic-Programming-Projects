@@ -13,6 +13,7 @@ class AVL extends BST
         pcur = null;
         pivot = root;
         parent_pivot = null;
+	
         while (cur != null)
         {
             if(cur.bf != 0)
@@ -20,6 +21,7 @@ class AVL extends BST
                 pivot = cur;
                 parent_pivot = pcur;
             }
+	    
             if(n < cur.data)
             {
                 pcur = cur;
@@ -40,10 +42,10 @@ class AVL extends BST
         {
             if(root != null)
             {
-              if (n < pcur.data)    // attach a left child
-                  pcur.left = node;
-              else                    // attach a right child
-                  pcur.right = node;
+               if(n < pcur.data)       // attach a left child
+                   pcur.left = node;
+               else                    // attach a right child
+                   pcur.right = node;
             }
             else
                 root = node;
@@ -51,7 +53,8 @@ class AVL extends BST
         if(!duplicate)
         {
             cur = pivot;
-            while (cur != null && cur.data != n)
+            
+	    while(cur != null && cur.data != n)
             {
                 if (n < cur.data)
                 {
@@ -72,12 +75,14 @@ class AVL extends BST
 		    pB = pivot.left;
                     pivot.left = pB.right;
                     pB.right = pivot;
+		    
                     if(parent_pivot == null)
                         root = pB;
                     else if(pivot == parent_pivot.left)
                         parent_pivot.left = pB;
                     else
                         parent_pivot.right = pB;
+			
                     pivot.bf = 0;
                     pB.bf = 0;
                 }
@@ -89,14 +94,17 @@ class AVL extends BST
                     pB.right = pC.left;
                     pC.right = pivot; 
                     pC.left = pB;
+		    
                     if(parent_pivot == null) 
                         root = pC;
                     else if(pivot == parent_pivot.left) 
                         parent_pivot.left = pC;
                     else 
                         parent_pivot.right = pC;
+			
                     pC.bf = 0;
                     System.out.println("LR rotation");
+		    
                     if(n == pC.data)
                     {
                         pB.bf = 0;
@@ -106,7 +114,9 @@ class AVL extends BST
                     {
 			pB.bf = 0;
 			pivot.bf = -1;
-		    } else {
+		    } 
+		    else 
+		    {
 			pB.bf = 1;
 			pivot.bf = 0;
         	    }
@@ -119,14 +129,17 @@ class AVL extends BST
                     pB.left = pC.right;
                     pC.left = pivot; 
                     pC.right = pB;
+		    
                     if(parent_pivot == null) 
                         root = pC;
                     else if(pivot == parent_pivot.left) 
                         parent_pivot.left = pC;
                     else 
                         parent_pivot.right = pC;
+			
                     pC.bf = 0;
                     System.out.println("RL rotation");
+		    
                     if(n == pC.data)
                     {
                         pB.bf = 0;
@@ -136,7 +149,9 @@ class AVL extends BST
                     {
 			pB.bf = -1;
 			pivot.bf = 0;
-		    } else {
+		    } 
+		    else 
+		    {
 			pB.bf = 0;
 			pivot.bf = 1;
 		    }
@@ -147,12 +162,14 @@ class AVL extends BST
 		    pB = pivot.right;
                     pivot.right = pB.left;
                     pB.left = pivot;
+		    
                     if(parent_pivot == null)
                         root = pB;
                     else if(parent_pivot.left == pivot)
                         parent_pivot.left = pB;
                     else
                         parent_pivot.right = pB;
+			
                     pivot.bf = 0;
                     pB.bf = 0;
                 }
