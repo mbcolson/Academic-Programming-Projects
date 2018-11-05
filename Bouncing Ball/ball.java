@@ -12,7 +12,7 @@ public class ball extends JFrame
 
     public static void main(String args[]) throws Exception
     {
-    	ball ballObj = new ball(1,5,0,0);
+        ball ballObj = new ball(1,5,0,0);
         
         for(int i = 0; i < 10000; i++)
         {
