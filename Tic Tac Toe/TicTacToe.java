@@ -135,7 +135,7 @@ public class TicTacToe
             if(game.isThereAWinner() || game.isFull())
                 break;
             do 
-	    {
+            {
                 System.out.println("O, choose the coordinates" +
                     " of your move: \nfirst row number (0,1 or 2)," +
                     "\nthen column number (0,1 or 2)");
