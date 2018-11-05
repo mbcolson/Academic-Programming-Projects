@@ -61,6 +61,7 @@ void List::Delete()
          cout << "Error: list is empty, cannot delete" << endl;
          return;
      }
+     
      node *temp = new node;
      temp = head;
 
@@ -74,10 +75,12 @@ void List::Delete()
      {
           while(temp->next != cur)
                temp = temp->next;
+          
           temp->next = cur->next;
           delete cur;
           cur = temp->next;
      }
+     
      if(EndOfList() && !IsEmpty())
          Reset();
 }
@@ -91,6 +94,7 @@ void List::Insert(const ItemType& Inserted)
      node* temp = new node;
      temp->It = Inserted;
      temp->next = cur;
+     
      if(head == cur)
      {
           head = temp;
@@ -99,8 +103,10 @@ void List::Insert(const ItemType& Inserted)
      else
      {
           cur = head;
+          
           while(cur->next != temp->next)
                cur = cur->next;
+          
           cur->next = temp;
           cur = cur->next;
      }
@@ -111,14 +117,17 @@ void List::Display(void) const
 {
      node *temp;
      temp = head;
+     
      if(cur != NULL)
          cout << "cur->It is: " << cur->It << endl;
      else
-    	 cout << "cur->It is: NULL" << endl;
+         cout << "cur->It is: NULL" << endl;
+     
      while(temp != NULL)
      {
           cout << temp->It << " -> ";
           temp = temp->next;
      }
+     
      cout << "NULL" << endl;
 }
