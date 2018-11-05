@@ -52,13 +52,12 @@ bool Heap::IsFull() const
 
 void Heap::ReheapDown(int root, int last)
 {
-     int maxChild;
-     int RC;
-     int LC;
+     int maxChild, RC, LC;
      Itemtype temp;
      
      LC = root * 2 + 1;
      RC = root * 2 + 2;
+     
      if(LC <= last)
      {
           if(LC == last)
@@ -88,6 +87,7 @@ void Heap::ReheapUp(int root, int last)
      if(last > root)
      {
           parent = (last - 1) / 2;
+          
           if(heap_array[parent] < heap_array[last])
           {
                temp = heap_array[parent];
