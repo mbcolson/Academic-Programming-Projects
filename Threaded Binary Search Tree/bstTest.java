@@ -24,7 +24,7 @@ loop:   while (true)
             else 
                 continue;
 	
-	    switch(i) 
+            switch(i) 
             {
                 case 1: System.out.print("Number to be inserted: "); 
                         System.out.flush();
