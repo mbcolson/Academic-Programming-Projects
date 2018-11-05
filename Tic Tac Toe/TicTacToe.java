@@ -38,56 +38,25 @@ public class TicTacToe
 
     public boolean isThereAWinner()
     {
-        if(gameBoard[0][0] == 'X' && gameBoard[1][1] == 'X'
-            && gameBoard[2][2] == 'X')
-            return(true);
-        else if(gameBoard[0][0] == 'X' && gameBoard[0][1] == 'X'
-            && gameBoard[0][2] == 'X')
-            return(true);
-        else if(gameBoard[0][0] == 'X' && gameBoard[1][0] == 'X'
-            && gameBoard[2][0] == 'X')
-            return(true);
-        else if(gameBoard[0][1] == 'X' && gameBoard[1][1] == 'X'
-            && gameBoard[2][1] == 'X')
-            return(true);
-        else if(gameBoard[0][2] == 'X' && gameBoard[1][2] == 'X'
-            && gameBoard[2][2] == 'X')
-            return(true);
-        else if(gameBoard[0][2] == 'X' && gameBoard[1][1] == 'X'
-            && gameBoard[2][0] == 'X')
-            return(true);
-        else if(gameBoard[1][0] == 'X' && gameBoard[1][1] == 'X'
-            && gameBoard[1][2] == 'X')
-            return(true);
-        else if(gameBoard[2][0] == 'X' && gameBoard[2][1] == 'X'
-            && gameBoard[2][2] == 'X')
-            return(true);
-        else if(gameBoard[0][0] == 'O' && gameBoard[1][1] == 'O'
-            && gameBoard[2][2] == 'O')
-            return(true);
-        else if(gameBoard[0][0] == 'O' && gameBoard[0][1] == 'O'
-            && gameBoard[0][2] == 'O')
-            return(true);
-        else if(gameBoard[0][0] == 'O' && gameBoard[1][0] == 'O'
-            && gameBoard[2][0] == 'O')
-            return(true);
-        else if(gameBoard[0][1] == 'O' && gameBoard[1][1] == 'O'
-            && gameBoard[2][1] == 'O')
-            return(true);
-        else if(gameBoard[0][2] == 'O' && gameBoard[1][2] == 'O'
-            && gameBoard[2][2] == 'O')
-            return(true);
-        else if(gameBoard[0][2] == 'O' && gameBoard[1][1] == 'O'
-            && gameBoard[2][0] == 'O')
-            return(true);
-        else if(gameBoard[1][0] == 'O' && gameBoard[1][1] == 'O'
-            && gameBoard[1][2] == 'O')
-            return(true);
-        else if(gameBoard[2][0] == 'O' && gameBoard[2][1] == 'O'
-            && gameBoard[2][2] == 'O')
-            return(true);
+        if((gameBoard[0][0] == 'X' && gameBoard[1][1] == 'X' && gameBoard[2][2] == 'X') ||
+            (gameBoard[0][0] == 'X' && gameBoard[0][1] == 'X' && gameBoard[0][2] == 'X') ||
+            (gameBoard[0][0] == 'X' && gameBoard[1][0] == 'X' && gameBoard[2][0] == 'X') ||
+            (gameBoard[0][1] == 'X' && gameBoard[1][1] == 'X' && gameBoard[2][1] == 'X') ||
+            (gameBoard[0][2] == 'X' && gameBoard[1][2] == 'X' && gameBoard[2][2] == 'X') ||
+            (gameBoard[0][2] == 'X' && gameBoard[1][1] == 'X' && gameBoard[2][0] == 'X') ||
+            (gameBoard[1][0] == 'X' && gameBoard[1][1] == 'X' && gameBoard[1][2] == 'X') ||
+            (gameBoard[2][0] == 'X' && gameBoard[2][1] == 'X' && gameBoard[2][2] == 'X') ||
+            (gameBoard[0][0] == 'O' && gameBoard[1][1] == 'O' && gameBoard[2][2] == 'O') ||
+            (gameBoard[0][0] == 'O' && gameBoard[0][1] == 'O' && gameBoard[0][2] == 'O') ||
+            (gameBoard[0][0] == 'O' && gameBoard[1][0] == 'O' && gameBoard[2][0] == 'O') ||
+            (gameBoard[0][1] == 'O' && gameBoard[1][1] == 'O' && gameBoard[2][1] == 'O') ||
+            (gameBoard[0][2] == 'O' && gameBoard[1][2] == 'O' && gameBoard[2][2] == 'O') ||
+            (gameBoard[0][2] == 'O' && gameBoard[1][1] == 'O' && gameBoard[2][0] == 'O') ||
+            (gameBoard[1][0] == 'O' && gameBoard[1][1] == 'O' && gameBoard[1][2] == 'O') ||
+            (gameBoard[2][0] == 'O' && gameBoard[2][1] == 'O' && gameBoard[2][2] == 'O'))
+            return true;
         else
-            return(false);
+            return false;
     }
 
     public void winnerIs()
@@ -101,6 +70,7 @@ public class TicTacToe
     public void reinitializeGame()
     {
         int row, column;
+	    
         for(row = 0; row < 3; row++)
             for(column = 0; column < 3; column++)
                 gameBoard[row][column] = ' ';
@@ -116,6 +86,7 @@ public class TicTacToe
                     return false;
             }
         }
+
         return true;
     }
 
@@ -124,6 +95,7 @@ public class TicTacToe
         int rowNum, colNum;
         TicTacToe game = new TicTacToe();
         Scanner keyboard = new Scanner(System.in);
+	    
         game.reinitializeGame();
 
         while(!game.isThereAWinner() && !game.isFull())
@@ -136,46 +108,66 @@ public class TicTacToe
                 do
                 {
                     rowNum = keyboard.nextInt();
+			
                     if(rowNum < 0 || rowNum > 2)
                         System.out.print("\nInvalid row number, enter row number: "); 
+			
                 } while(rowNum < 0 || rowNum > 2);
+		    
                 do
                 {
                     colNum = keyboard.nextInt();
+			
                     if(colNum < 0 || colNum > 2)
                         System.out.print("\nInvalid column number, enter column number: ");
+			
                 } while(colNum < 0 || colNum > 2);
             
                 if(!game.isOpen(rowNum, colNum))
                     System.out.println("\nThat position is already taken, try again");
+		    
             } while(!game.isOpen(rowNum, colNum));
 
             game.addAMove(rowNum,colNum);
+		
             game.displayBoard();
+		
             if(game.isThereAWinner() || game.isFull())
                 break;
-            do {
+            do 
+	    {
                 System.out.println("O, choose the coordinates" +
                     " of your move: \nfirst row number (0,1 or 2)," +
                     "\nthen column number (0,1 or 2)");
+		    
                 do
                 {
                     rowNum = keyboard.nextInt();
+			
                     if(rowNum < 0 || rowNum > 2)
                         System.out.print("\nInvalid row number, enter row number: ");  
+			
                 } while(rowNum < 0 || rowNum > 2);
+		    
                 do
                 {
                     colNum = keyboard.nextInt();
+			
                     if(colNum < 0 || colNum > 2)
                         System.out.print("\nInvalid column number, enter column number: "); 
+			
                 } while(colNum < 0 || colNum > 2);
+		    
                 if(!game.isOpen(rowNum, colNum))
                     System.out.println("\nThat position is already taken, try again"); 
+		    
             } while(!game.isOpen(rowNum, colNum));
+		
             game.addAMove(rowNum,colNum);
+		
             game.displayBoard();
         }
+	    
         if(game.isFull() && !game.isThereAWinner())
             System.out.println("\nNo winner\n");
         else
