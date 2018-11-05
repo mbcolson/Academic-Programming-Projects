@@ -21,7 +21,7 @@ loop:   while(true)
 	
             if(!s.equals(""))
                 i = Integer.valueOf(s).intValue();  
-	    else 
+            else 
                 continue;
 	
             switch(i) 
