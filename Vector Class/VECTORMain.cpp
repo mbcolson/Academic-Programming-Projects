@@ -35,5 +35,32 @@ int main()
 
     cout << RADIANS_TO_DEGREES(v11.angle(v12)) << " degrees" << endl;
 
+    cout << "-----------------" << endl;
+
+    cout << v1.add(v2) << endl;
+    cout << v3.add(v4) << endl;
+    cout << v5.add(v6) << endl;
+    cout << v7.add(v8) << endl;
+    cout << v9.add(v10) << endl;
+    cout << v11.add(v12) << endl;
+
+    cout << "-----------------" << endl;
+
+    cout << v1.subtract(v2) << endl;
+    cout << v3.subtract(v4) << endl;
+    cout << v5.subtract(v6) << endl;
+    cout << v7.subtract(v8) << endl;
+    cout << v9.subtract(v10) << endl;
+    cout << v11.subtract(v12) << endl;
+
+    cout << "-----------------" << endl;
+
+    cout << v1.crossProduct(v2) << endl;
+    cout << v3.crossProduct(v4) << endl;
+    cout << v5.crossProduct(v6) << endl;
+    cout << v7.crossProduct(v8) << endl;
+    cout << v9.crossProduct(v10) << endl;
+    cout << v11.crossProduct(v12) << endl;
+
     return 0;
 }
