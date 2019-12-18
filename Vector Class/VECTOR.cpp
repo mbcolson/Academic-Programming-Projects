@@ -11,14 +11,14 @@ VECTOR::VECTOR(long double x, long double y, long double z)
 
 long double VECTOR::dotProduct(const VECTOR &v) const
 {
-     return (this->x * v.x) + (this->y * v.y) + (this->z * v.z);
+    return (this->x * v.x) + (this->y * v.y) + (this->z * v.z);
 }
 
 const VECTOR VECTOR::crossProduct(const VECTOR &v) const
 {
-	return VECTOR((this->y * v.z) - (this->z * v.y),
-			(this->z * v.x) - (this->x * v.z),
-			(this->x * v.y) - (this->y * v.x));
+    return VECTOR((this->y * v.z) - (this->z * v.y),
+                 (this->z * v.x) - (this->x * v.z),
+                 (this->x * v.y) - (this->y * v.x));
 }
 
 long double VECTOR::length() const
@@ -34,17 +34,17 @@ long double VECTOR::angle(const VECTOR &v) const
 
 const VECTOR VECTOR::add(const VECTOR &v) const
 {
-	return VECTOR(this->x + v.x, this->y + v.y, this->z + v.z);
+    return VECTOR(this->x + v.x, this->y + v.y, this->z + v.z);
 }
 
 const VECTOR VECTOR::subtract(const VECTOR &v) const
 {
-	return VECTOR(this->x - v.x, this->y - v.y, this->z - v.z);
+    return VECTOR(this->x - v.x, this->y - v.y, this->z - v.z);
 }
 
 ostream &operator<<(ostream &output, const VECTOR &v)
 {
-     output << "(" << v.x << ", " << v.y << ", " << v.z << ")";
+    output << "(" << v.x << ", " << v.y << ", " << v.z << ")";
 
-     return output;
+    return output;
 }
