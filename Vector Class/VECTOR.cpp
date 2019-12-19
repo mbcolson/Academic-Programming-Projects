@@ -16,14 +16,14 @@ long double VECTOR::dotProduct(const VECTOR &v) const
 
 const VECTOR VECTOR::crossProduct(const VECTOR &v) const
 {
-	return VECTOR((this->y * v.z) - (this->z * v.y),
-			(this->z * v.x) - (this->x * v.z),
-			(this->x * v.y) - (this->y * v.x));
+    return VECTOR((this->y * v.z) - (this->z * v.y),
+		 (this->z * v.x) - (this->x * v.z),
+		 (this->x * v.y) - (this->y * v.x));
 }
 
 const VECTOR VECTOR::scalarMultiply(long double s) const
 {
-	return VECTOR(this->x * s, this->y * s, this->z * s);
+    return VECTOR(this->x * s, this->y * s, this->z * s);
 }
 
 long double VECTOR::length() const
@@ -39,12 +39,12 @@ long double VECTOR::angle(const VECTOR &v) const
 
 VECTOR operator +(const VECTOR &v1, const VECTOR &v2)
 {
-	return VECTOR(v1.x + v2.x, v1.y + v2.y, v1.z + v2.z);
+    return VECTOR(v1.x + v2.x, v1.y + v2.y, v1.z + v2.z);
 }
 
 VECTOR operator -(const VECTOR &v1, const VECTOR &v2)
 {
-	return VECTOR(v1.x - v2.x, v1.y - v2.y, v1.z - v2.z);
+    return VECTOR(v1.x - v2.x, v1.y - v2.y, v1.z - v2.z);
 }
 
 ostream &operator <<(ostream &output, const VECTOR &v)
