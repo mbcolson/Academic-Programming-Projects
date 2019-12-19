@@ -32,28 +32,30 @@ int main()
 
     VECTOR v11(1.0, 2.0, 3.0);
     VECTOR v12(3.0, 1.0, 6.0);
+    VECTOR v13(9.0, 4.0, -1.0);
 
     cout << RADIANS_TO_DEGREES(v11.angle(v12)) << " degrees" << endl;
 
-    cout << "-----------------" << endl;
+    cout << "------------------" << endl;
 
-    cout << v1.add(v2) << endl;
-    cout << v3.add(v4) << endl;
-    cout << v5.add(v6) << endl;
-    cout << v7.add(v8) << endl;
-    cout << v9.add(v10) << endl;
-    cout << v11.add(v12) << endl;
+    cout << v1 + v2 << endl;
+    cout << v3 + v4 << endl;
+    cout << v5 + v6 << endl;
+    cout << v7 + v8 << endl;
+    cout << v9 + v10 << endl;
+    cout << v11 + v12 + v13 << endl;
 
-    cout << "-----------------" << endl;
+    cout << "------------------" << endl;
 
-    cout << v1.subtract(v2) << endl;
-    cout << v3.subtract(v4) << endl;
-    cout << v5.subtract(v6) << endl;
-    cout << v7.subtract(v8) << endl;
-    cout << v9.subtract(v10) << endl;
-    cout << v11.subtract(v12) << endl;
+    cout << v1 - v2 << endl;
+    cout << v3 - v4 << endl;
+    cout << v5 - v6 << endl;
+    cout << v7 - v8 << endl;
+    cout << v9 - v10 << endl;
+    cout << v11 - v12 - v13 << endl;
+    cout << v1 + v2 - v3 << endl;
 
-    cout << "-----------------" << endl;
+    cout << "------------------" << endl;
 
     cout << v1.crossProduct(v2) << endl;
     cout << v3.crossProduct(v4) << endl;
@@ -61,6 +63,12 @@ int main()
     cout << v7.crossProduct(v8) << endl;
     cout << v9.crossProduct(v10) << endl;
     cout << v11.crossProduct(v12) << endl;
+
+    cout << "------------------" << endl;
+
+    cout << v1.scalarMultiply(4.0) << endl;
+    cout << v3.scalarMultiply(-2.0) << endl;
+    cout << v4.scalarMultiply(0.5) << endl;
 
     return 0;
 }
