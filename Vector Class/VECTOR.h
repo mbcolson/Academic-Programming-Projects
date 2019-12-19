@@ -23,17 +23,22 @@ class VECTOR
         // Returns the cross product of this vector and vector 'v'
         const VECTOR crossProduct(const VECTOR &v) const;
 
+        // Returns this vector multiplied by scalar 's'
+        const VECTOR scalarMultiply(long double s) const;
+
         // Returns the length of this vector
         long double length() const;
 
         // Returns the angle between this vector and vector 'v' in radians
         long double angle(const VECTOR &v) const;
 
-        // Returns the vector sum of this vector and vector 'v'
-        const VECTOR add(const VECTOR &v) const;
+        // Returns the vector sum of this vectors 'v1' and 'v2'
+        friend VECTOR operator +(const VECTOR &v1,
+               const VECTOR &v2);
 
-        // Returns the vector difference of this vector and vector 'v'
-        const VECTOR subtract(const VECTOR &v) const;
+        // Returns the vector difference of vectors 'v1' and 'v2'
+        friend VECTOR operator -(const VECTOR &v1,
+        	   const VECTOR &v2);
 
         friend ostream &operator<<(ostream &output, const VECTOR &v);
 };
