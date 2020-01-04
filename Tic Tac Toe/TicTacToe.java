@@ -136,15 +136,6 @@ public class TicTacToe
             game.addAMove(rowNum, colNum);
 
             game.displayBoard();
-
-            if(game.isThereAWinner() || game.isFull())
-                break;
-
-            game.validate(keyboard);
-
-            game.addAMove(rowNum, colNum);
-
-            game.displayBoard();
         }
 
         if(!game.isThereAWinner())
