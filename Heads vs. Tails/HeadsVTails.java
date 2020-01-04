@@ -52,13 +52,13 @@ public class HeadsVTails extends Frame
         g.setColor(Color.black);
 
         g.drawLine(60, 250, 260, 250);  // horizontal axis
-        g.drawLine(60, 250,60, 100);    // vertical axis
+        g.drawLine(60, 250, 60, 100);   // vertical axis
 
-        g.drawLine(55,175,65,175);
+        g.drawLine(55, 175, 65, 175);
 
-        g.drawLine(55,100,65,100);
+        g.drawLine(55, 100, 65, 100);
 
-        g.drawString("Percent",9,80);
+        g.drawString("Percent", 9, 80);
         g.drawString("Heads", 96, 267);
         g.drawString("Tails", 193, 269);
 
