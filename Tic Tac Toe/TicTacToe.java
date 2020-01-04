@@ -4,19 +4,20 @@ public class TicTacToe
 {
     private char[][] gameBoard = new char[3][3];
     private static int turns = 0;
+    private static int rowNum, colNum;
 
-    public boolean isOpen(int i, int j)
+    private boolean isOpen(int i, int j)
     {
         return gameBoard[i][j] == ' ';
     }
 
-    public void addAMove(int i, int j)
+    private void addAMove(int i, int j)
     {
-	      turns++;
         gameBoard[i][j] = whoseTurnIsIt(); 
+	turns++;
     }
 
-    public void displayBoard()
+    private void displayBoard()
     {
         System.out.println("\n  " + gameBoard[0][0] + " |  "
             + gameBoard[0][1] + " |  " + gameBoard[0][2]);
@@ -28,7 +29,7 @@ public class TicTacToe
             + gameBoard[2][1] + " |  " + gameBoard[2][2] + "\n");
     }
 
-    public char whoseTurnIsIt()
+    private char whoseTurnIsIt()
     {
         if(turns % 2 == 0)
             return 'O';
@@ -36,38 +37,31 @@ public class TicTacToe
             return 'X';
     }
 
-    public boolean isThereAWinner()
+    private boolean isThereAWinner()
     {
-        if((gameBoard[0][0] == 'X' && gameBoard[1][1] == 'X' && gameBoard[2][2] == 'X') ||
-            (gameBoard[0][0] == 'X' && gameBoard[0][1] == 'X' && gameBoard[0][2] == 'X') ||
-            (gameBoard[0][0] == 'X' && gameBoard[1][0] == 'X' && gameBoard[2][0] == 'X') ||
-            (gameBoard[0][1] == 'X' && gameBoard[1][1] == 'X' && gameBoard[2][1] == 'X') ||
-            (gameBoard[0][2] == 'X' && gameBoard[1][2] == 'X' && gameBoard[2][2] == 'X') ||
-            (gameBoard[0][2] == 'X' && gameBoard[1][1] == 'X' && gameBoard[2][0] == 'X') ||
-            (gameBoard[1][0] == 'X' && gameBoard[1][1] == 'X' && gameBoard[1][2] == 'X') ||
-            (gameBoard[2][0] == 'X' && gameBoard[2][1] == 'X' && gameBoard[2][2] == 'X') ||
-            (gameBoard[0][0] == 'O' && gameBoard[1][1] == 'O' && gameBoard[2][2] == 'O') ||
-            (gameBoard[0][0] == 'O' && gameBoard[0][1] == 'O' && gameBoard[0][2] == 'O') ||
-            (gameBoard[0][0] == 'O' && gameBoard[1][0] == 'O' && gameBoard[2][0] == 'O') ||
-            (gameBoard[0][1] == 'O' && gameBoard[1][1] == 'O' && gameBoard[2][1] == 'O') ||
-            (gameBoard[0][2] == 'O' && gameBoard[1][2] == 'O' && gameBoard[2][2] == 'O') ||
-            (gameBoard[0][2] == 'O' && gameBoard[1][1] == 'O' && gameBoard[2][0] == 'O') ||
-            (gameBoard[1][0] == 'O' && gameBoard[1][1] == 'O' && gameBoard[1][2] == 'O') ||
-            (gameBoard[2][0] == 'O' && gameBoard[2][1] == 'O' && gameBoard[2][2] == 'O'))
-            return true;
-        else
-            return false;
+        return ((gameBoard[0][0] != ' ' && gameBoard[0][0] == gameBoard[1][1] &&
+	    gameBoard[1][1] == gameBoard[2][2]) || (gameBoard[2][0] != ' ' &&
+	    gameBoard[2][0] == gameBoard[1][1] && gameBoard[1][1] == gameBoard[0][2]) ||
+            (gameBoard[0][0] != ' ' && gameBoard[0][0] == gameBoard[1][0] &&
+	    gameBoard[1][0] == gameBoard[2][0]) || (gameBoard[0][1] != ' ' &&
+            gameBoard[0][1] == gameBoard[1][1] && gameBoard[1][1] == gameBoard[2][1]) ||
+            (gameBoard[0][2] != ' ' && gameBoard[0][2] == gameBoard[1][2] && 
+	    gameBoard[1][2] == gameBoard[2][2]) || (gameBoard[0][0] != ' ' && 
+            gameBoard[0][0] == gameBoard[0][1] && gameBoard[0][1] == gameBoard[0][2]) ||
+            (gameBoard[1][0] != ' ' && gameBoard[1][0] == gameBoard[1][1] && 
+	    gameBoard[1][1] == gameBoard[1][2]) || (gameBoard[2][0] != ' ' &&
+            gameBoard[2][0] == gameBoard[2][1] && gameBoard[2][1] == gameBoard[2][2]));
     }
 
-    public void winnerIs()
+    private void displayWinner()
     {
-        if(isThereAWinner() && whoseTurnIsIt() == 'X')
-            System.out.println("\nX is the Winner\n");
-        else if(isThereAWinner() && whoseTurnIsIt() == 'O')
+        if(whoseTurnIsIt() == 'X')
             System.out.println("\nO is the Winner\n");
+        else
+            System.out.println("\nX is the Winner\n");
     }
 
-    public void reinitializeGame()
+    private void reinitializeGame()
     {
         int row, column;
 	    
@@ -76,7 +70,7 @@ public class TicTacToe
                 gameBoard[row][column] = ' ';
     }
 
-    public boolean isFull()
+    private boolean isFull()
     {
         for(int i = 0; i < 3; i++)
         { 
@@ -90,87 +84,74 @@ public class TicTacToe
         return true;
     }
 
+    private void validate(Scanner keyboard)
+    {
+        boolean valid;
+
+        do
+        {
+            valid = true;
+            System.out.printf("%c, choose the coordinates" +
+                " of your move: \nfirst row number (0,1 or 2)," +
+                "\nthen column number (0,1 or 2)\n", whoseTurnIsIt());
+            do
+            {
+                valid = true;
+                rowNum = keyboard.nextInt();
+
+                if(rowNum < 0 || rowNum > 2) {
+                    valid = false;
+                    System.out.print("\nInvalid row number, enter row number: "); 
+                }
+            } while(!valid);
+    
+            do
+            {
+                valid = true;
+                colNum = keyboard.nextInt();
+
+                if(colNum < 0 || colNum > 2) {
+		    valid = false;
+                    System.out.print("\nInvalid column number, enter column number: ");
+                }
+            } while(!valid);
+
+            if(!isOpen(rowNum, colNum))
+            {
+                valid = false;
+                System.out.println("\nThat position is already taken, try again");
+            }
+        } while(!valid);
+    }
+
     public static void main(String[] args)
     {
-        int rowNum, colNum;
         TicTacToe game = new TicTacToe();
         Scanner keyboard = new Scanner(System.in);
-	    
+
         game.reinitializeGame();
 
         while(!game.isThereAWinner() && !game.isFull())
         {
-            do
-            {
-                System.out.println("X, choose the coordinates" +
-                    " of your move: \nfirst row number (0,1 or 2)," +
-                    "\nthen column number (0,1 or 2)");
-                do
-                {
-                    rowNum = keyboard.nextInt();
-			
-                    if(rowNum < 0 || rowNum > 2)
-                        System.out.print("\nInvalid row number, enter row number: "); 
-			
-                } while(rowNum < 0 || rowNum > 2);
-		    
-                do
-                {
-                    colNum = keyboard.nextInt();
-			
-                    if(colNum < 0 || colNum > 2)
-                        System.out.print("\nInvalid column number, enter column number: ");
-			
-                } while(colNum < 0 || colNum > 2);
-            
-                if(!game.isOpen(rowNum, colNum))
-                    System.out.println("\nThat position is already taken, try again");
-		    
-            } while(!game.isOpen(rowNum, colNum));
+            game.validate(keyboard);
 
-            game.addAMove(rowNum,colNum);
-		
+            game.addAMove(rowNum, colNum);
+
             game.displayBoard();
-		
+
             if(game.isThereAWinner() || game.isFull())
                 break;
-            do 
-            {
-                System.out.println("O, choose the coordinates" +
-                    " of your move: \nfirst row number (0,1 or 2)," +
-                    "\nthen column number (0,1 or 2)");
-		    
-                do
-                {
-                    rowNum = keyboard.nextInt();
-			
-                    if(rowNum < 0 || rowNum > 2)
-                        System.out.print("\nInvalid row number, enter row number: ");  
-			
-                } while(rowNum < 0 || rowNum > 2);
-		    
-                do
-                {
-                    colNum = keyboard.nextInt();
-			
-                    if(colNum < 0 || colNum > 2)
-                        System.out.print("\nInvalid column number, enter column number: "); 
-			
-                } while(colNum < 0 || colNum > 2);
-		    
-                if(!game.isOpen(rowNum, colNum))
-                    System.out.println("\nThat position is already taken, try again"); 
-		    
-            } while(!game.isOpen(rowNum, colNum));
-		
-            game.addAMove(rowNum,colNum);
-		
+
+            game.validate(keyboard);
+
+            game.addAMove(rowNum, colNum);
+
             game.displayBoard();
         }
-	    
-        if(game.isFull() && !game.isThereAWinner())
+
+        if(!game.isThereAWinner())
             System.out.println("\nNo winner\n");
         else
-            game.winnerIs();
+            game.displayWinner();
     }
 }
