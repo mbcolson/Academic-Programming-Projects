@@ -63,11 +63,9 @@ public class TicTacToe
 
     private void reinitializeGame()
     {
-        int row, column;
-	    
-        for(row = 0; row < 3; row++)
-            for(column = 0; column < 3; column++)
-                gameBoard[row][column] = ' ';
+        for(int i = 0; i < 3; i++)
+            for(int j = 0; j < 3; j++)
+                gameBoard[i][j] = ' ';
     }
 
     private boolean isFull()
