@@ -61,7 +61,7 @@ public class TicTacToe
             System.out.println("\nX is the Winner\n");
     }
 
-    private void reinitializeGame()
+    private void initializeGame()
     {
         for(int i = 0; i < 3; i++)
             for(int j = 0; j < 3; j++)
@@ -127,7 +127,7 @@ public class TicTacToe
         TicTacToe game = new TicTacToe();
         Scanner keyboard = new Scanner(System.in);
 
-        game.reinitializeGame();
+        game.initializeGame();
 
         while(!game.isThereAWinner() && !game.isFull())
         {
