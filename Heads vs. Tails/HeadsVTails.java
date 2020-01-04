@@ -38,7 +38,7 @@ public class HeadsVTails extends Frame
         percentOfHeads *= 1.5;
         percentOfTails *= 1.5;
 
-        setSize( 325, 325 );
+        setSize(325, 325);
         setTitle("Heads vs. Tails");
         setVisible(true);
         setResizable(false);
@@ -47,16 +47,16 @@ public class HeadsVTails extends Frame
         addWindowListener(myListener);
     }
 
-    public void paint( Graphics g )
+    public void paint(Graphics g)
     {
-        g.setColor( Color.black);
+        g.setColor(Color.black);
 
-        g.drawLine( 60, 250, 260, 250);  // horizontal axis
-        g.drawLine( 60, 250,60, 100);    // vertical axis
+        g.drawLine(60, 250, 260, 250);  // horizontal axis
+        g.drawLine(60, 250,60, 100);    // vertical axis
 
-        g.drawLine( 55,175,65,175);
+        g.drawLine(55,175,65,175);
 
-        g.drawLine( 55,100,65,100);
+        g.drawLine(55,100,65,100);
 
         g.drawString("Percent",9,80);
         g.drawString("Heads", 96, 267);
@@ -65,13 +65,13 @@ public class HeadsVTails extends Frame
         g.drawString("50", 34, 180);
         g.drawString("100", 31, 105);
 
-        g.setColor( Color.red );
+        g.setColor(Color.red);
 
-        g.fillRect( 77, 250 - (int)percentOfHeads, 75, (int)percentOfHeads);
+        g.fillRect(77, 250 - (int)percentOfHeads, 75, (int)percentOfHeads);
 
         g.setColor(Color.blue);
 
-        g.fillRect( 170, 250 - (int)percentOfTails, 75, (int)percentOfTails);
+        g.fillRect(170, 250 - (int)percentOfTails, 75, (int)percentOfTails);
     }
 
     public class WindowDestroyer extends WindowAdapter
