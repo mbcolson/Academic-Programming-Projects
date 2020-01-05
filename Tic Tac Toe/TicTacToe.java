@@ -3,8 +3,8 @@ import java.util.*;
 public class TicTacToe
 {
     private char[][] gameBoard = new char[3][3];
-    private static int turns = 0;
-    private static int rowNum, colNum;
+    private int turns = 0;
+    private int rowNum, colNum;
     private Scanner sc;
 
     public TicTacToe()
@@ -17,7 +17,7 @@ public class TicTacToe
         return gameBoard[row][col] == ' ';
     }
 
-    private void addAMove()
+    private void addMove()
     {
         gameBoard[rowNum][colNum] = whoseTurnIsIt(); 
 	turns++;
@@ -137,7 +137,7 @@ public class TicTacToe
         while(!game.isThereAWinner() && !game.isFull())
         {
             game.getMove();
-            game.addAMove();
+            game.addMove();
             game.displayBoard();
         }
 
