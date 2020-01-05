@@ -5,15 +5,21 @@ public class TicTacToe
     private char[][] gameBoard = new char[3][3];
     private static int turns = 0;
     private static int rowNum, colNum;
+    private Scanner sc;
 
-    private boolean isOpen(int i, int j)
+    public TicTacToe()
     {
-        return gameBoard[i][j] == ' ';
+        sc = new Scanner(System.in);
     }
 
-    private void addAMove(int i, int j)
+    private boolean isOpen(int row, int col)
     {
-        gameBoard[i][j] = whoseTurnIsIt(); 
+        return gameBoard[row][col] == ' ';
+    }
+
+    private void addAMove()
+    {
+        gameBoard[rowNum][colNum] = whoseTurnIsIt(); 
 	turns++;
     }
 
@@ -82,7 +88,7 @@ public class TicTacToe
         return true;
     }
 
-    private void validate(Scanner keyboard)
+    private void getMove()
     {
         boolean valid;
 
@@ -95,7 +101,7 @@ public class TicTacToe
             do
             {
                 valid = true;
-                rowNum = keyboard.nextInt();
+                rowNum = sc.nextInt();
 
                 if(rowNum < 0 || rowNum > 2) {
                     valid = false;
@@ -106,7 +112,7 @@ public class TicTacToe
             do
             {
                 valid = true;
-                colNum = keyboard.nextInt();
+                colNum = sc.nextInt();
 
                 if(colNum < 0 || colNum > 2) {
 		    valid = false;
@@ -125,16 +131,13 @@ public class TicTacToe
     public static void main(String[] args)
     {
         TicTacToe game = new TicTacToe();
-        Scanner keyboard = new Scanner(System.in);
 
         game.initializeGame();
 
         while(!game.isThereAWinner() && !game.isFull())
         {
-            game.validate(keyboard);
-
-            game.addAMove(rowNum, colNum);
-
+            game.getMove();
+            game.addAMove();
             game.displayBoard();
         }
 
