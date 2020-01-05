@@ -2,13 +2,14 @@ import java.util.*;
 
 public class TicTacToe
 {
-    private char[][] gameBoard = new char[3][3];
-    private int turns = 0;
-    private int rowNum, colNum;
+    private char[][] gameBoard;
+    private int turns, rowNum, colNum;
     private Scanner sc;
 
     public TicTacToe()
     {
+        gameBoard = new char[3][3];
+	turns = 0;
         sc = new Scanner(System.in);
     }
 
