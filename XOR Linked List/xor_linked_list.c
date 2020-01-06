@@ -64,6 +64,8 @@ void delete(struct node **head, struct node **tail, int n)
           
             cur = nxt;
         }
+	else if(cur->data > n)
+	    break;
         else
         {
             nxt = (struct node *)(cur->link ^ (unsigned long)prv);
