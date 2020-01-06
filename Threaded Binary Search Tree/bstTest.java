@@ -110,8 +110,8 @@ class TBST extends BST
                     pcur.left = node;
                     pcur.lt = false;
                 }
-                else
-                {                      // attaching a right child
+                else                  // attaching a right child
+                {                      
                     node.right = pcur.right;
                     node.left = pcur;
                     node.lt = node.rt = true;
