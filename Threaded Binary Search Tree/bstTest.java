@@ -161,7 +161,8 @@ class TBST extends BST
             root = null;  
         else if(cur != null)
         {
-            if(cur.lt == false && cur.rt == false && cur.right != null && cur.left != null)  // 2 children
+            if(cur.lt == false && cur.rt == false && cur.right != null 
+	        && cur.left != null)  // 2 children
             {
                 temp = cur.right; 
                 ptemp = cur;
@@ -176,7 +177,9 @@ class TBST extends BST
                 delete(temp.data);
                 cur.data = d;
             }
-            else if((cur.lt == true && cur.rt == true) || (cur.lt == true && cur.right == null) || (cur.rt == true && cur.left == null))     // deleting a leaf
+            else if((cur.lt == true && cur.rt == true) || 
+	        (cur.lt == true && cur.right == null) ||
+	        (cur.rt == true && cur.left == null))     // deleting a leaf
             {
                 if(pcur.left == cur)
                 {
@@ -189,7 +192,8 @@ class TBST extends BST
                     pcur.rt = true;
                 }
             }
-            else if(cur.left != null && cur.lt == false) // deleting a node with a left child
+            else if(cur.left != null && 
+	        cur.lt == false) // deleting a node with a left child
             { 
 	        temp = cur.left;
                 ptemp = cur;
@@ -218,7 +222,8 @@ class TBST extends BST
                         pcur.left = ptemp;
                 }
             }
-            else if(cur.right != null && cur.rt == false) // deleting a node with a right child
+            else if(cur.right != null 
+	        && cur.rt == false) // deleting a node with a right child
             {
                 temp = cur.right;
                 ptemp = cur;
