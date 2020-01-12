@@ -79,7 +79,8 @@ int main(int argc, char *argv[])
             printf("Error: unable to open infile\n");  // print an error message to the   
     }                                                  // user if unable to open the input
     else                                               // file
-        printf("Correct Usage: prog3 infile outfile\n");   // display the correct usage of
+        printf("Correct Usage: bounded_buffer_semaphores infile outfile\n");   
+                                                           // display the correct usage of
                                                            // the program to the user
 
     return 0;   // the main thread exits here and returns 0 to the operating system
