@@ -1,0 +1,33 @@
+Chronologic VCS simulator copyright 1991-2009
+
+Contains Synopsys proprietary information.
+
+Compiler version D-2009.12; 
+Runtime version D-2009.12;  
+Apr 16 22:29 2013
+VCD+ Writer D-2009.12 Copyright 2009 Synopsys Inc.
+                   
+
+0 IDEXMemRead = 0 IFIDImmd = 0 IFIDRegOp1 = 0010 IFIDRegOp2 = 0010 IDEXRegOp1 = 0010 PCWrite = 1 IFIDWrite = 1 stall = 0
+                 
+200 IDEXMemRead = 1 IFIDImmd = 0 IFIDRegOp1 = 0010 IFIDRegOp2 = 0010 IDEXRegOp1 = 0010 PCWrite = 0 IFIDWrite = 0 stall = 1
+                 
+220 IDEXMemRead = 0 IFIDImmd = 0 IFIDRegOp1 = 0010 IFIDRegOp2 = 0010 IDEXRegOp1 = 0010 PCWrite = 1 IFIDWrite = 1 stall = 0
+                 
+320 IDEXMemRead = 1 IFIDImmd = 1 IFIDRegOp1 = 0010 IFIDRegOp2 = 0010 IDEXRegOp1 = 0010 PCWrite = 1 IFIDWrite = 1 stall = 0
+                 
+340 IDEXMemRead = 0 IFIDImmd = 1 IFIDRegOp1 = 0010 IFIDRegOp2 = 0010 IDEXRegOp1 = 0010 PCWrite = 1 IFIDWrite = 1 stall = 0
+                 
+440 IDEXMemRead = 1 IFIDImmd = 0 IFIDRegOp1 = 0101 IFIDRegOp2 = 1011 IDEXRegOp1 = 0010 PCWrite = 1 IFIDWrite = 1 stall = 0
+                 
+460 IDEXMemRead = 1 IFIDImmd = 0 IFIDRegOp1 = 0101 IFIDRegOp2 = 1011 IDEXRegOp1 = 0101 PCWrite = 0 IFIDWrite = 0 stall = 1
+           
+
+V C S   S i m u l a t i o n   R e p o r t 
+Time: 460
+
+
+CPU Time:      0.300 seconds;       Data structure size:   0.0Mb
+
+
+Tue Apr 16 22:29:41 2013

@@ -1,0 +1,46 @@
+Chronologic VCS simulator copyright 1991-2009
+
+Contains Synopsys proprietary information.
+Compiler version D-2009.12; 
+Runtime version D-2009.12;  Apr 15 02:24 2013
+
+VCD+ Writer D-2009.12 Copyright 2009 Synopsys Inc.
+                   
+
+0 Clear = 1 ReadData1 =     x ReadData2 =     x RegWrite = 0 ReadReg1 =  5 ReadReg2 =  4 WriteReg1 =  5 WriteReg2 =  0 WriteData1 =     8 WriteData2 =    12
+
+                  
+10 Clear = 1 ReadData1 =     0 ReadData2 =     0 RegWrite = 0 ReadReg1 =  5 ReadReg2 =  4 WriteReg1 =  5 WriteReg2 =  0 WriteData1 =     8 WriteData2 =    12
+
+                  
+40 Clear = 0 ReadData1 =     0 ReadData2 =     0 RegWrite = 0 ReadReg1 =  5 ReadReg2 =  4 WriteReg1 =  5 WriteReg2 =  0 WriteData1 =     8 WriteData2 =    12
+
+                  
+60 Clear = 0 ReadData1 =     0 ReadData2 =     0 RegWrite = 1 ReadReg1 =  5 ReadReg2 =  4 WriteReg1 =  5 WriteReg2 =  0 WriteData1 =     8 WriteData2 =    12
+
+                  
+70 Clear = 0 ReadData1 =     8 ReadData2 =     0 RegWrite = 1 ReadReg1 =  5 ReadReg2 =  4 WriteReg1 =  5 WriteReg2 =  0 WriteData1 =     8 WriteData2 =    12
+
+                  
+80 Clear = 0 ReadData1 =     8 ReadData2 =     0 RegWrite = 0 ReadReg1 =  5 ReadReg2 =  4 WriteReg1 =  5 WriteReg2 =  0 WriteData1 =     8 WriteData2 =    12
+
+
+
+$finish called from file "regfile_fixture.v", 
+
+line 36.
+$finish at simulation time                  400
+           
+
+V C S   S i m u l a t i o n   R e p o r t 
+
+
+Time: 400
+
+
+CPU Time:      0.310 seconds;       
+
+Data structure size:   0.0Mb
+
+
+Mon Apr 15 02:24:05 2013

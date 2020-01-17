@@ -1,0 +1,73 @@
+Chronologic VCS simulator copyright 1991-2009
+
+Contains Synopsys proprietary information.
+
+Compiler version D-2009.12; 
+Runtime version D-2009.12;  
+Apr 20 01:48 2013
+
+VCD+ Writer D-2009.12 Copyright 2009 Synopsys Inc.
+
+OpCode = 0000 FuncCode = 0000 PCSrc = 0 Overflow = 0 DivByZero = 0 RegWrite = 1 Branch = 0 Jump = 0 ALUSrc = 0 Immd = 0 ALUOp = 10 BGT = 0 BLT = 0 BEQ = 0 MemWrite = 0 MemRead = 0 MemToReg = 0 IFFlush = 0 IDFlush = 0 EXFlush = 0
+
+OpCode = 0000 FuncCode = 0001 PCSrc = 0 Overflow = 0 DivByZero = 0 RegWrite = 1 Branch = 0 Jump = 0 ALUSrc = 0 Immd = 0 ALUOp = 10 BGT = 0 BLT = 0 BEQ = 0 MemWrite = 0 MemRead = 0 MemToReg = 0 IFFlush = 0 IDFlush = 0 EXFlush = 0
+
+OpCode = 0000 FuncCode = 0010 PCSrc = 0 Overflow = 0 DivByZero = 0 RegWrite = 1 Branch = 0 Jump = 0 ALUSrc = 0 Immd = 0 ALUOp = 10 BGT = 0 BLT = 0 BEQ = 0 MemWrite = 0 MemRead = 0 MemToReg = 0 IFFlush = 0 IDFlush = 0 EXFlush = 0
+
+OpCode = 0000 FuncCode = 0011 PCSrc = 0 Overflow = 0 DivByZero = 0 RegWrite = 1 Branch = 0 Jump = 0 ALUSrc = 0 Immd = 0 ALUOp = 10 BGT = 0 BLT = 0 BEQ = 0 MemWrite = 0 MemRead = 0 MemToReg = 0 IFFlush = 0 IDFlush = 0 EXFlush = 0
+
+OpCode = 0000 FuncCode = 0100 PCSrc = 0 Overflow = 0 DivByZero = 0 RegWrite = 1 Branch = 0 Jump = 0 ALUSrc = 0 Immd = 0 ALUOp = 10 BGT = 0 BLT = 0 BEQ = 0 MemWrite = 0 MemRead = 0 MemToReg = 0 IFFlush = 0 IDFlush = 0 EXFlush = 0
+
+OpCode = 0000 FuncCode = 0101 PCSrc = 0 Overflow = 0 DivByZero = 0 RegWrite = 1 Branch = 0 Jump = 0 ALUSrc = 0 Immd = 0 ALUOp = 10 BGT = 0 BLT = 0 BEQ = 0 MemWrite = 0 MemRead = 0 MemToReg = 0 IFFlush = 0 IDFlush = 0 EXFlush = 0
+
+OpCode = 0000 FuncCode = 1000 PCSrc = 0 Overflow = 0 DivByZero = 0 RegWrite = 1 Branch = 0 Jump = 0 ALUSrc = 0 Immd = 1 ALUOp = 10 BGT = 0 BLT = 0 BEQ = 0 MemWrite = 0 MemRead = 0 MemToReg = 0 IFFlush = 0 IDFlush = 0 EXFlush = 0
+
+OpCode = 0000 FuncCode = 1001 PCSrc = 0 Overflow = 0 DivByZero = 0 RegWrite = 1 Branch = 0 Jump = 0 ALUSrc = 0 Immd = 1 ALUOp = 10 BGT = 0 BLT = 0 BEQ = 0 MemWrite = 0 MemRead = 0 MemToReg = 0 IFFlush = 0 IDFlush = 0 EXFlush = 0
+
+OpCode = 0000 FuncCode = 1010 PCSrc = 0 Overflow = 0 DivByZero = 0 RegWrite = 1 Branch = 0 Jump = 0 ALUSrc = 0 Immd = 1 ALUOp = 10 BGT = 0 BLT = 0 BEQ = 0 MemWrite = 0 MemRead = 0 MemToReg = 0 IFFlush = 0 IDFlush = 0 EXFlush = 0
+
+OpCode = 0000 FuncCode = 1011 PCSrc = 0 Overflow = 0 DivByZero = 0 RegWrite = 1 Branch = 0 Jump = 0 ALUSrc = 0 Immd = 1 ALUOp = 10 BGT = 0 BLT = 0 BEQ = 0 MemWrite = 0 MemRead = 0 MemToReg = 0 IFFlush = 0 IDFlush = 0 EXFlush = 0
+
+Invalid FuncCode Exception, program is halted
+
+OpCode = 0000 FuncCode = 1101 PCSrc = 0 Overflow = 0 DivByZero = 0 RegWrite = 0 Branch = 0 Jump = 0 ALUSrc = 0 Immd = 0 ALUOp = 10 BGT = 0 BLT = 0 BEQ = 0 MemWrite = 0 MemRead = 0 MemToReg = 0 IFFlush = 0 IDFlush = 0 EXFlush = 0
+OpCode = 1000 FuncCode = 1101 PCSrc = 0 Overflow = 0 DivByZero = 0 RegWrite = 1 Branch = 0 Jump = 0 ALUSrc = 1 Immd = 0 ALUOp = 00 BGT = 0 BLT = 0 BEQ = 0 MemWrite = 0 MemRead = 1 MemToReg = 1 IFFlush = 0 IDFlush = 0 EXFlush = 0
+OpCode = 1011 FuncCode = 1101 PCSrc = 0 Overflow = 0 DivByZero = 0 RegWrite = 0 Branch = 0 Jump = 0 ALUSrc = 1 Immd = 0 ALUOp = 00 BGT = 0 BLT = 0 BEQ = 0 MemWrite = 1 MemRead = 0 MemToReg = 0 IFFlush = 0 IDFlush = 0 EXFlush = 0
+
+OpCode = 0100 FuncCode = 1101 PCSrc = 0 Overflow = 0 DivByZero = 0 RegWrite = 0 Branch = 1 Jump = 0 ALUSrc = 0 Immd = 0 ALUOp = 01 BGT = 0 BLT = 1 BEQ = 0 MemWrite = 0 MemRead = 0 MemToReg = 0 IFFlush = 0 IDFlush = 0 EXFlush = 0
+
+OpCode = 0101 FuncCode = 1101 PCSrc = 0 Overflow = 0 DivByZero = 0 RegWrite = 0 Branch = 1 Jump = 0 ALUSrc = 0 Immd = 0 ALUOp = 01 BGT = 1 BLT = 0 BEQ = 0 MemWrite = 0 MemRead = 0 MemToReg = 0 IFFlush = 0 IDFlush = 0 EXFlush = 0
+
+OpCode = 0110 FuncCode = 1101 PCSrc = 0 Overflow = 0 DivByZero = 0 RegWrite = 0 Branch = 1 Jump = 0 ALUSrc = 0 Immd = 0 ALUOp = 01 BGT = 0 BLT = 0 BEQ = 1 MemWrite = 0 MemRead = 0 MemToReg = 0 IFFlush = 0 IDFlush = 0 EXFlush = 0
+
+OpCode = 1100 FuncCode = 1101 PCSrc = 0 Overflow = 0 DivByZero = 0 RegWrite = 0 Branch = 0 Jump = 1 ALUSrc = 0 Immd = 0 ALUOp = 01 BGT = 0 BLT = 0 BEQ = 1 MemWrite = 0 MemRead = 0 MemToReg = 0 IFFlush = 0 IDFlush = 0 EXFlush = 0
+
+OpCode = 1111 FuncCode = 1101 PCSrc = 0 Overflow = 0 DivByZero = 0 RegWrite = 0 Branch = 0 Jump = 0 ALUSrc = 0 Immd = 0 ALUOp = 01 BGT = 0 BLT = 0 BEQ = 0 MemWrite = 0 MemRead = 0 MemToReg = 0 IFFlush = 0 IDFlush = 0 EXFlush = 0
+
+Invalid OpCode Exception, program is halted
+
+OpCode = 1110 FuncCode = 1101 PCSrc = 0 Overflow = 0 DivByZero = 0 RegWrite = 0 Branch = 0 Jump = 0 ALUSrc = 0 Immd = 0 ALUOp = 01 BGT = 0 BLT = 0 BEQ = 0 MemWrite = 0 MemRead = 0 MemToReg = 0 IFFlush = 0 IDFlush = 0 EXFlush = 0
+
+OpCode = 1110 FuncCode = 1101 PCSrc = 1 Overflow = 0 DivByZero = 0 RegWrite = 0 Branch = 0 Jump = 0 ALUSrc = 0 Immd = 0 ALUOp = 01 BGT = 0 BLT = 0 BEQ = 0 MemWrite = 0 MemRead = 0 MemToReg = 0 IFFlush = 1 IDFlush = 1 EXFlush = 1
+
+OpCode = 1011 FuncCode = 1101 PCSrc = 0 Overflow = 0 DivByZero = 0 RegWrite = 0 Branch = 0 Jump = 0 ALUSrc = 1 Immd = 0 ALUOp = 00 BGT = 0 BLT = 0 BEQ = 0 MemWrite = 1 MemRead = 0 MemToReg = 0 IFFlush = 0 IDFlush = 0 EXFlush = 0
+
+OpCode = 1100 FuncCode = 1101 PCSrc = 0 Overflow = 0 DivByZero = 0 RegWrite = 0 Branch = 0 Jump = 1 ALUSrc = 1 Immd = 0 ALUOp = 00 BGT = 0 BLT = 0 BEQ = 0 MemWrite = 0 MemRead = 0 MemToReg = 0 IFFlush = 0 IDFlush = 0 EXFlush = 0
+
+Arithmetic Overflow Exception, program is halted
+
+OpCode = 0000 FuncCode = 0011 PCSrc = 0 Overflow = 1 DivByZero = 0 RegWrite = 0 Branch = 0 Jump = 1 ALUSrc = 1 Immd = 0 ALUOp = 00 BGT = 0 BLT = 0 BEQ = 0 MemWrite = 0 MemRead = 0 MemToReg = 0 IFFlush = 1 IDFlush = 1 EXFlush = 1
+
+Division by Zero Exception, program is halted
+
+OpCode = 0000 FuncCode = 0011 PCSrc = 0 Overflow = 0 DivByZero = 1 RegWrite = 0 Branch = 0 Jump = 1 ALUSrc = 1 Immd = 0 ALUOp = 00 BGT = 0 BLT = 0 BEQ = 0 MemWrite = 0 MemRead = 0 MemToReg = 0 IFFlush = 1 IDFlush = 1 EXFlush = 1
+           
+
+V C S   S i m u l a t i o n   R e p o r t 
+Time: 6380
+
+
+CPU Time:      0.310 seconds;       Data structure size:   0.0Mb
+
+
+Sat Apr 20 01:48:04 2013

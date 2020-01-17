@@ -1,0 +1,37 @@
+Chronologic VCS simulator copyright 1991-2009
+
+Contains Synopsys proprietary information.
+
+Compiler version D-2009.12; 
+Runtime version D-2009.12;  
+Apr 16 23:44 2013
+VCD+ Writer D-2009.12 Copyright 2009 Synopsys Inc.
+                   
+
+0 EXMEMRegWrite = 0 MEMWBRegWrite = 0 IDEXImmd = 0 EXMEMRegOp1 = 0010 IDEXRegOp1 = 0011 IDEXRegOp2 = 0100 MEMWBRegOp1 = 0101 ForwardA = 00 ForwardB = 00
+                 
+100 EXMEMRegWrite = 1 MEMWBRegWrite = 0 IDEXImmd = 0 EXMEMRegOp1 = 0010 IDEXRegOp1 = 0011 IDEXRegOp2 = 0100 MEMWBRegOp1 = 0101 ForwardA = 00 ForwardB = 00
+                 
+120 EXMEMRegWrite = 0 MEMWBRegWrite = 0 IDEXImmd = 0 EXMEMRegOp1 = 0010 IDEXRegOp1 = 0011 IDEXRegOp2 = 0100 MEMWBRegOp1 = 0101 ForwardA = 00 ForwardB = 00
+                 
+320 EXMEMRegWrite = 1 MEMWBRegWrite = 0 IDEXImmd = 0 EXMEMRegOp1 = 0010 IDEXRegOp1 = 0010 IDEXRegOp2 = 0100 MEMWBRegOp1 = 0101 ForwardA = 10 ForwardB = 00
+                 
+340 EXMEMRegWrite = 0 MEMWBRegWrite = 0 IDEXImmd = 0 EXMEMRegOp1 = 0010 IDEXRegOp1 = 1000 IDEXRegOp2 = 0100 MEMWBRegOp1 = 0101 ForwardA = 00 ForwardB = 00
+                 
+640 EXMEMRegWrite = 1 MEMWBRegWrite = 0 IDEXImmd = 0 EXMEMRegOp1 = 0010 IDEXRegOp1 = 1000 IDEXRegOp2 = 0010 MEMWBRegOp1 = 0101 ForwardA = 00 ForwardB = 10
+                 
+660 EXMEMRegWrite = 0 MEMWBRegWrite = 1 IDEXImmd = 0 EXMEMRegOp1 = 0010 IDEXRegOp1 = 0101 IDEXRegOp2 = 0010 MEMWBRegOp1 = 0101 ForwardA = 01 ForwardB = 00
+                 
+680 EXMEMRegWrite = 0 MEMWBRegWrite = 0 IDEXImmd = 0 EXMEMRegOp1 = 0010 IDEXRegOp1 = 1101 IDEXRegOp2 = 1001 MEMWBRegOp1 = 0101 ForwardA = 00 ForwardB = 00
+                 
+700 EXMEMRegWrite = 0 MEMWBRegWrite = 1 IDEXImmd = 0 EXMEMRegOp1 = 0010 IDEXRegOp1 = 1101 IDEXRegOp2 = 0101 MEMWBRegOp1 = 0101 ForwardA = 00 ForwardB = 01
+           
+
+V C S   S i m u l a t i o n   R e p o r t 
+Time: 700
+
+
+CPU Time:      0.300 seconds;       Data structure size:   0.0Mb
+
+
+Tue Apr 16 23:44:14 2013

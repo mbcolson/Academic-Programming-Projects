@@ -1,0 +1,50 @@
+Chronologic VCS simulator copyright 1991-2009
+
+Contains Synopsys proprietary information.
+
+Compiler version D-2009.12; 
+Runtime version D-2009.12;  
+Apr 17 00:57 2013
+
+VCD+ Writer D-2009.12 Copyright 2009 Synopsys Inc.
+                   
+
+0 PCWrite = 1 in = 0000000001111011 out = xxxxxxxxxxxxxxxx
+                  
+10 PCWrite = 1 in = 0000000001111011 out = 0000000001111011
+                  
+20 PCWrite = 1 in = 0000000001111101 out = 0000000001111011
+                  
+30 PCWrite = 1 in = 0000000001111101 out = 0000000001111101
+                  
+40 PCWrite = 0 in = 0000000001111111 out = 0000000001111101
+                  
+60 PCWrite = 1 in = 0000000001111111 out = 0000000001111101
+                  
+70 PCWrite = 1 in = 0000000001111111 out = 0000000001111111
+                  
+80 PCWrite = 1 in = 0000000010000001 out = 0000000001111111
+                  
+90 PCWrite = 1 in = 0000000010000001 out = 0000000010000001
+                 
+100 PCWrite = 1 in = 0000000010000011 out = 0000000010000001
+                 
+110 PCWrite = 1 in = 0000000010000011 out = 0000000010000011
+
+
+$finish called from file "pc_fixture.v", line 35.
+
+
+$finish at simulation time                  400
+           
+
+V C S   S i m u l a t i o n   R e p o r t 
+Time: 400
+
+
+CPU Time:      0.310 seconds;       
+
+Data structure size:   0.0Mb
+
+
+Wed Apr 17 00:57:25 2013

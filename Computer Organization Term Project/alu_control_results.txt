@@ -1,0 +1,48 @@
+Chronologic VCS simulator copyright 1991-2009
+
+Contains Synopsys proprietary information.
+
+Compiler version D-2009.12; Runtime version D-2009.12;  
+Apr 14 18:32 2013
+
+VCD+ Writer D-2009.12 Copyright 2009 Synopsys Inc.
+
+
+ALUOp = 10 FuncCode = 0000 ALUCtl = 0000
+
+ALUOp = 10 FuncCode = 0001 ALUCtl = 0001
+
+ALUOp = 10 FuncCode = 0010 ALUCtl = 0010
+
+ALUOp = 10 FuncCode = 0011 ALUCtl = 0011
+
+ALUOp = 10 FuncCode = 0100 ALUCtl = 0100
+
+ALUOp = 10 FuncCode = 0101 ALUCtl = 0101
+
+ALUOp = 10 FuncCode = 1000 ALUCtl = 1000
+
+ALUOp = 10 FuncCode = 1001 ALUCtl = 1001
+
+ALUOp = 10 FuncCode = 1010 ALUCtl = 1010
+
+ALUOp = 10 FuncCode = 1011 ALUCtl = 1011
+
+ALUOp = 00 FuncCode = 1011 ALUCtl = 0000
+
+ALUOp = 01 FuncCode = 1011 ALUCtl = 0001
+          
+
+ 
+V C S   S i m u l a t i o n   R e p o r t 
+
+
+Time: 1980
+
+
+CPU Time:      0.300 seconds;       
+
+Data structure size:   0.0Mb
+
+
+Sun Apr 14 18:32:19 2013
