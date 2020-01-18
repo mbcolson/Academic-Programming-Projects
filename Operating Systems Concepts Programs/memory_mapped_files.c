@@ -109,8 +109,8 @@ int main(int argc, char *argv[])
         close(fd);  // close the 'fd' file descriptor
     }
     else
-        printf("Correct Usage: prog5 infile\n");  // display the correct usage of the program to 
-                                                  // the user
+        printf("Correct Usage: memory_mapped_files infile\n");  // display the correct usage of  
+                                                                // the program to the user
 
     return 0;  // the parent process exits here and returns 0 to the operating system
 }
