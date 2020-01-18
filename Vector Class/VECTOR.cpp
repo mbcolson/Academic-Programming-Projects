@@ -3,11 +3,7 @@
 VECTOR::VECTOR() : x(0.0), y(0.0), z(0.0) {}
 
 VECTOR::VECTOR(long double x, long double y, long double z)
-{
-    this->x = x;
-    this->y = y;
-    this->z = z;
-}
+    : x(x), y(y), z(z) {}
 
 long double VECTOR::dotProduct(const VECTOR &v) const
 {
