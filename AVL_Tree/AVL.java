@@ -56,7 +56,7 @@ class AVL extends BST
         {
             cur = pivot;
             
-	     while(cur != null && cur.data != n)
+            while(cur != null && cur.data != n)
             {
                 if(n < cur.data)
                 {
@@ -74,8 +74,8 @@ class AVL extends BST
             {
                 if(n < pivot.data && n < pivot.left.data)    // LL rotation
                 {
-	             System.out.println("LL rotation");
-		     pB = pivot.left;
+                    System.out.println("LL rotation");
+                    pB = pivot.left;
                     pivot.left = pB.right;
                     pB.right = pivot;
 		    
@@ -85,7 +85,7 @@ class AVL extends BST
                         parent_pivot.left = pB;
                     else
                         parent_pivot.right = pB;
-			
+
                     pivot.bf = 0;
                     pB.bf = 0;
                 }
@@ -117,12 +117,12 @@ class AVL extends BST
                     {
 			pB.bf = 0;
 			pivot.bf = -1;
-		     } 
-		     else 
-		     {
-			 pB.bf = 1;
-			 pivot.bf = 0;
-        	     }
+                    } 
+                    else 
+                    {
+                        pB.bf = 1;
+                        pivot.bf = 0;
+                    }
                 }
                 else if(n > pivot.data && n < pivot.right.data)    // RL rotation
                 {
@@ -152,17 +152,17 @@ class AVL extends BST
                     {
 			pB.bf = -1;
 			pivot.bf = 0;
-		     } 
-		     else 
-		     {
-			 pB.bf = 0;
-			 pivot.bf = 1;
-		     }
+                    } 
+                    else 
+                    {
+                        pB.bf = 0;
+                        pivot.bf = 1;
+                    }
                 }
                 else if(n > pivot.data && n > pivot.right.data)    // RR rotation
                 {
-		     System.out.println("RR rotation");
-		     pB = pivot.right;
+                    System.out.println("RR rotation");
+                    pB = pivot.right;
                     pivot.right = pB.left;
                     pB.left = pivot;
 		    
