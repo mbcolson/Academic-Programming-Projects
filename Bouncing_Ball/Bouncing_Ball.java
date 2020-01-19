@@ -3,7 +3,7 @@ import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.event.*;
 
-public class ball extends JFrame
+public class Bouncing_Ball extends JFrame
 {
     private float dx;
     private float dy;
@@ -12,7 +12,7 @@ public class ball extends JFrame
 
     public static void main(String args[]) throws Exception
     {
-        ball ballObj = new ball(1,5,0,0);
+        Bouncing_Ball ballObj = new Bouncing_Ball(1,5,0,0);
         
         for(int i = 0; i < 10000; i++)
         {
@@ -44,7 +44,7 @@ public class ball extends JFrame
         }
     }
 
-    public ball(int dx, int dy, int x_location, int y_location)
+    public Bouncing_Ball(int dx, int dy, int x_location, int y_location)
     {
         setSize(500,500);
         setVisible(true);
@@ -52,6 +52,7 @@ public class ball extends JFrame
         this.dy = dy;
         this.x_location = x_location;
         this.y_location = y_location;
+	setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
     public void paint(Graphics g)
