@@ -36,7 +36,7 @@ created in step 3
 # sudo insmod new_module.ko
 ```
 
-6. Files named with the current day's date should be created in the 'file' and 'network' folders created <br />
+6. Files named with the current day's date should be created in the `'file'` and `'network'` folders created <br />
 in step 3. These files are where the file and network system calls are logged.
 
 7. Remove the loadable kernel object from the kernel
