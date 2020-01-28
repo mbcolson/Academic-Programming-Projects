@@ -209,7 +209,7 @@ asmlinkage long new_accept(int fd, struct sockaddr __user *buff1, int __user *bu
         print_time(USER_TIME);
         strcpy(netinfo_buff, USER_TIME + 1);
 
-        snprintf(buff, 8, "%s", "Accept");
+        snprintf(buff, 8, "%s", "ACCEPT");
         strcat(netinfo_buff, buff);
         snprintf(buff, 18, "#%s", inet_ntoa(getsock.sin_addr));
         strcat(netinfo_buff, buff);
