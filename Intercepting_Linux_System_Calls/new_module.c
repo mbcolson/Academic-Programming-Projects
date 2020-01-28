@@ -158,7 +158,7 @@ asmlinkage long new_connect(int fd, struct sockaddr __user *buff1, int flag)
         print_time(USER_TIME);
         strcpy(netinfo_buff, USER_TIME + 1);
 
-	snprintf(buff, 9, "%s", "Connect");
+	snprintf(buff, 9, "%s", "CONNECT");
         strcat(netinfo_buff, buff);
         snprintf(buff, 18, "#%s", inet_ntoa(getsock.sin_addr));
         strcat(netinfo_buff, buff);
