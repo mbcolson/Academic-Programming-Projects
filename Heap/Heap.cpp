@@ -55,8 +55,8 @@ void Heap::ReheapDown(int root, int last)
      int maxChild, RC, LC;
      Itemtype temp;
      
-     LC = root * 2 + 1;
-     RC = root * 2 + 2;
+     LC = (root * 2) + 1;
+     RC = (root * 2) + 2;
      
      if(LC <= last)
      {
