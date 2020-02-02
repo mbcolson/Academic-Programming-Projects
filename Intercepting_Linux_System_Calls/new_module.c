@@ -384,7 +384,7 @@ void write_file(char *buffer, char *path)
         } 
     }
 
-    fd = original_open(path, O_WRONLY | O_CREAT | O_APPEND, 0777);
+    fd = original_open(path, O_WRONLY | O_CREAT | O_APPEND, 0666);
 
     //printk("\nfd = %d, buffer = %s\n", fd, buffer);
 
