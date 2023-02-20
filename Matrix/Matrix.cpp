@@ -102,15 +102,6 @@ ll Matrix::det() {
    
     return determinant(); 
 }
-
-void Matrix::print() {
-    for(size_t i = 0; i < m; i++) {
-        for(size_t j = 0; j < n; j++) {
-            cout << a[i][j] << ' ';
-        }
-        cout << endl;
-    }
-}
     
 ll Matrix::determinant() {
     if (m == 2)
@@ -145,4 +136,13 @@ Matrix Matrix::subMatrix(const Matrix& A, size_t r) const {
     } 
 
     return tmp;
+}
+
+void Matrix::print() {
+    for(size_t i = 0; i < m; i++) {
+        for(size_t j = 0; j < n; j++) {
+            cout << a[i][j] << ' ';
+        }
+        cout << endl;
+    }
 }
