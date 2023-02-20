@@ -85,7 +85,7 @@ int main() {
 
     E.print();
 
-    cout << endl;
+    cout << endl << "F = " << endl;
 
     F.print();
 
