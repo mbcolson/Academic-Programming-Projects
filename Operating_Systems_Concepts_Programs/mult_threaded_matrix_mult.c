@@ -25,23 +25,19 @@ pthread_mutex_t c1_lock = PTHREAD_MUTEX_INITIALIZER;     // with default attribu
 pthread_mutex_t c2_lock = PTHREAD_MUTEX_INITIALIZER;
 pthread_mutex_t c3_lock = PTHREAD_MUTEX_INITIALIZER;
 
-int main(int argc, char *argv[])
-{
-    if(argc == 9) // the argument count to the main function must be equal to 9 
-    {             // or an error message is displayed
+int main(int argc, char *argv[]) {
+    if (argc == 9) { // the argument count to the main function must be equal to 9 
+                     // or an error message is displayed
         int i; 
         
-        for(i = 1; i < 9; i++)
-        {
-           if(!isValid(argv[i]))   // validate each string argument passed to main  
-           {
+        for(i = 1; i < 9; i++) {
+           if (!isValid(argv[i])) {  // validate each string argument passed to main  
                printf("Incorrect type of input\n");  // display an error message if 
                break;                                // any argument is invalid 
            }
         }
 
-        if(i == 9)  // if i == 9, all arguments are valid
-        {
+        if (i == 9) { // if i == 9, all arguments are valid
             pthread_t MC0, MC1, MC2, MC3, display; // declare identifiers for the threads
 
             // The following five function calls to pthread_create() will create five threads which all 
@@ -80,8 +76,7 @@ int main(int argc, char *argv[])
 
             printf("The main thread is now exiting\n");                        
         }
-    }
-    else
+    } else
        printf("Incorrect number of input\n"); // display an error message for invalid argument count
 
     return 0;   // the main thread exits here and returns 0 to the operating system
@@ -89,8 +84,7 @@ int main(int argc, char *argv[])
 
 // function for computing c0 and writing the result to shared memory for the display thread to read
 
-void compute_MC0(void *argv[])
-{
+void compute_MC0(void *argv[]) {
     printf("The MC0 thread is now created, tid = %u\n", pthread_self());  // display the calling 
                                                                           // thread's thread id
 
@@ -105,8 +99,7 @@ void compute_MC0(void *argv[])
 
 // function for computing c1 and writing the result to shared memory for the display thread to read
 
-void compute_MC1(void *argv[])
-{
+void compute_MC1(void *argv[]) {
     printf("The MC1 thread is now created, tid = %u\n", pthread_self());  // display the calling
                                                                           // thread's thread id
     pthread_mutex_lock(&c1_lock);   // lock the mutex 'c1_lock'
@@ -120,8 +113,7 @@ void compute_MC1(void *argv[])
 
 // function for computing c2 and writing the result to shared memory for the display thread to read
 
-void compute_MC2(void *argv[])
-{
+void compute_MC2(void *argv[]) {
     printf("The MC2 thread is now created, tid = %u\n", pthread_self());  // display the calling
                                                                           // thread's thread id
     pthread_mutex_lock(&c2_lock);   // lock the mutex 'c2_lock'
@@ -135,8 +127,7 @@ void compute_MC2(void *argv[])
 
 // function for computing c3 and writing the result to shared memory for the display thread to read
 
-void compute_MC3(void *argv[])
-{
+void compute_MC3(void *argv[]) {
     printf("The MC3 thread is now created, tid = %u\n", pthread_self());  // display the calling
                                                                           // thread's thread id
     pthread_mutex_lock(&c3_lock);   // lock the mutex 'c3_lock'
@@ -151,8 +142,7 @@ void compute_MC3(void *argv[])
 // function for reading the results of the computations from shared memory and displaying them 
 // to the user
  
-void display_results()
-{
+void display_results() {
     int display_c0, display_c1, display_c2, display_c3; // local variables for displaying c0 through 
                                                         // c3 to the user
    
@@ -193,25 +183,21 @@ void display_results()
 // 0 if the string is not valid and 1 if it is valid. A valid string contains 
 // an optional '+' or '-' character followed by one or more digits
 
-int isValid(char *str)    
-{
+int isValid(char *str) {
     int i = 1;
 
-    if(isdigit(str[0]) || str[0] == '+' || str[0] == '-') 
-    {
-        if((str[0] == '+' || str[0] == '-') && str[1] == 0)
+    if (isdigit(str[0]) || str[0] == '+' || str[0] == '-') {
+        if ((str[0] == '+' || str[0] == '-') && str[1] == 0)
             return 0;
 
-        while(str[i] != 0)
-        {
-            if(!isdigit(str[i]))          
+        while(str[i] != 0) {
+            if (!isdigit(str[i]))          
                return 0;
 
             i++;
         }
 
         return 1;
-    }
-    else
+    } else
        return 0;
 }
