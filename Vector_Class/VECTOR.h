@@ -6,8 +6,7 @@ using namespace std;
 
 // This class represents vectors in 3d space
 
-class VECTOR
-{
+class VECTOR {
     private:
         // vector coordinates
         long double x, y, z;
