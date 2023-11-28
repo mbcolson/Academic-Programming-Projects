@@ -36,8 +36,7 @@ class VECTOR
         friend VECTOR operator +(const VECTOR &v1, const VECTOR &v2);
 
         // Returns the vector difference of vectors 'v1' and 'v2'
-        friend VECTOR operator -(const VECTOR &v1,
-        	   const VECTOR &v2);
+        friend VECTOR operator -(const VECTOR &v1, const VECTOR &v2);
 
         friend ostream &operator<<(ostream &output, const VECTOR &v);
 };
