@@ -10,8 +10,7 @@
 
 #define SERVER 1L           // constant value used to identify the server process
 
-typedef struct 
-{
+typedef struct {
     long msg_to;            // message header. 'msg_to' is used to indicate the recipient
     long msg_fm;            // of the message. 'msg_fm' is used to indicate the sender.
     char buffer[BUFSIZ];    // message body
@@ -22,8 +21,7 @@ key_t key;                  // System V IPC key
 struct msqid_ds buf;        // structure that defines a message queue
 MESSAGE msg;                // structure used to store a message
 
-int main()
-{
+int main() {
     key = ftok(".", 'z');  // convert a pathname and a project identifier to a 
                            // System V IPC key
  
@@ -33,8 +31,7 @@ int main()
 
     int i = 0;
 
-    while(i < sizeof(msg.buffer))
-    {
+    while(i < sizeof(msg.buffer)) {
         msg.buffer[i] = toupper(msg.buffer[i]); // convert the string contained in the 
         i++;                                    // the message body to its uppercase
     }                                           // equivalent
