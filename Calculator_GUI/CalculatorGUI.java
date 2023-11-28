@@ -2,22 +2,19 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class CalculatorGUI extends JFrame implements ActionListener
-{
+public class CalculatorGUI extends JFrame implements ActionListener {
     private JTextField inputOutputField;
     private String operator = "=";
     private Double result, operand1, operand2;
     private String display = "";
     private int counter = 0;
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         CalculatorGUI calc = new CalculatorGUI();
         calc.setVisible(true);
     }
 
-    public CalculatorGUI()
-    {
+    public CalculatorGUI() {
         setTitle("Calculator");
         setSize(250,250);
         setResizable(false);
@@ -101,70 +98,58 @@ public class CalculatorGUI extends JFrame implements ActionListener
         contentPane.add(textPanel, BorderLayout.NORTH);
     }
 
-    public void actionPerformed(ActionEvent e)
-    {
-        if(e.getActionCommand().equals("0"))
-        {
+    public void actionPerformed(ActionEvent e) {
+        if (e.getActionCommand().equals("0")) {
             display += 0;
             inputOutputField.setText(display);
         }
 
-        if(e.getActionCommand().equals("1"))
-        {
+        if (e.getActionCommand().equals("1")) {
             display += 1;
             inputOutputField.setText(display);
         }
 
-        if(e.getActionCommand().equals("2"))
-        {
+        if (e.getActionCommand().equals("2")) {
             display += 2;
             inputOutputField.setText(display);
         }
 
-        if(e.getActionCommand().equals("3"))
-        {
+        if (e.getActionCommand().equals("3")) {
             display += 3;
             inputOutputField.setText(display);
         }
 
-        if(e.getActionCommand().equals("4"))
-        {
+        if (e.getActionCommand().equals("4")) {
             display += 4;
             inputOutputField.setText(display);
         }
 
-        if(e.getActionCommand().equals("5"))
-        {
+        if (e.getActionCommand().equals("5")) {
             display += 5;
             inputOutputField.setText(display);
         }
 
-        if(e.getActionCommand().equals("6"))
-        {
+        if (e.getActionCommand().equals("6")) {
             display += 6;
             inputOutputField.setText(display);
         }
 
-        if(e.getActionCommand().equals("7"))
-        {
+        if (e.getActionCommand().equals("7")) {
             display += 7;
             inputOutputField.setText(display);
         }
 
-        if(e.getActionCommand().equals("8"))
-        {
+        if (e.getActionCommand().equals("8")) {
             display += 8;
             inputOutputField.setText(display);
         }
 
-        if(e.getActionCommand().equals("9"))
-        {
+        if (e.getActionCommand().equals("9")) {
             display += 9;
             inputOutputField.setText(display);
         }
 
-        if(e.getActionCommand().equals("+"))
-        {
+        if (e.getActionCommand().equals("+")) {
             operand1 = Double.parseDouble(inputOutputField.getText());
             counter = 0;
             operator = "+";
@@ -172,8 +157,7 @@ public class CalculatorGUI extends JFrame implements ActionListener
             inputOutputField.setText("" + display);
         }
 
-        if(e.getActionCommand().equals("-"))
-        {
+        if (e.getActionCommand().equals("-")) {
             operand1 = Double.parseDouble(inputOutputField.getText());
 	    counter = 0;
             operator = "-";
@@ -181,8 +165,7 @@ public class CalculatorGUI extends JFrame implements ActionListener
             inputOutputField.setText("" + display);
         }
 
-        if(e.getActionCommand().equals("*"))
-        {
+        if (e.getActionCommand().equals("*")) {
             operand1 = Double.parseDouble(inputOutputField.getText());
             counter = 0;
             operator = "*";
@@ -190,8 +173,7 @@ public class CalculatorGUI extends JFrame implements ActionListener
             inputOutputField.setText("" + display);
         }
 
-        if(e.getActionCommand().equals("/"))
-        {
+        if (e.getActionCommand().equals("/")) {
             operand1 = Double.parseDouble(inputOutputField.getText());
             counter = 0;
             operator = "/";
@@ -199,39 +181,32 @@ public class CalculatorGUI extends JFrame implements ActionListener
             inputOutputField.setText("" + display);
         }
 
-        if(e.getActionCommand().equals("="))
-        { 
+        if (e.getActionCommand().equals("=")) { 
             display="";
             operand2 = Double.parseDouble(inputOutputField.getText());
-            if(operator.equals("+"))
-            {
+		
+            if (operator.equals("+")) {
                 counter = 0;
                 result = operand1 + operand2;
                 inputOutputField.setText("" + result);
                 display = "";
                 operand1 = null;
                 operand2 = null;
-            }
-            else if(operator.equals("-"))
-            {
+            } else if(operator.equals("-")) {
                 counter=0;
                 result = operand1 - operand2;
                 inputOutputField.setText("" + result);
                 display = "";
                 operand1 = null;
                 operand2 = null;
-            }
-            else if(operator.equals("*"))
-            {
+            } else if(operator.equals("*")) {
                 counter=0;
                 result = operand1 * operand2;
                 inputOutputField.setText("" + result);
                 display= "";
                 operand1 = null;
                 operand2 = null;
-            }
-            else if(operator.equals("/"))
-            {
+            } else if(operator.equals("/")) {
                 counter=0;
                 result = operand1 / operand2;
                 inputOutputField.setText("" + result);
@@ -240,15 +215,13 @@ public class CalculatorGUI extends JFrame implements ActionListener
                 operand2 = null;
             }
         }
-        if(e.getActionCommand().equals("."))
-        {
-            if(counter == 0)
-            {
+	    
+        if (e.getActionCommand().equals(".")) {
+            if (counter == 0) {
                 display += ".";
                 counter++;
                 inputOutputField.setText("" + display);
-            }
-            else
+            } else
                 System.out.print("");
         }
     }
