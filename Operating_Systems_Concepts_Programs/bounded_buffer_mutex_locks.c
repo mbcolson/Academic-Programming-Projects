@@ -30,24 +30,23 @@ pthread_cond_t item_avail = PTHREAD_COND_INITIALIZER;   // two static condition
 // The main thread begins executing in the following function. 'argv[1]' is the 
 // name of the input file and 'argv[2]' is the name of the output file.
 
-int main(int argc, char *argv[])
-{
-    if(argc == 3) // the argument count to the main function must be equal to three 
-    {             // or an error message is displayed
-
+int main(int argc, char *argv[]) {
+    if (argc == 3) { // the argument count to the main function must be equal to three 
+                     // or an error message is displayed
+      
         FILE *infilePtr, *outfilePtr;  // declare FILE pointers for the input file 
                                        // stream and the output file stream
  
         infilePtr = fopen(argv[1], "r");   // open the input file in read mode
         
-        if(infilePtr != NULL) // if the input file doesn't exist or cannot be read 
-        {                     // the fopen function will return NULL 
-
+        if (infilePtr != NULL) { // if the input file doesn't exist or cannot be read 
+                                // the fopen function will return NULL 
+          
             outfilePtr = fopen(argv[2], "w");  // create the output file in write mode        
         
-            if(outfilePtr != NULL) // if the output file cannot be created the fopen      
-            {                      // function will return NULL
-
+            if (outfilePtr != NULL) { // if the output file cannot be created the fopen      
+                                     // function will return NULL
+              
                 pthread_t producer, consumer;  // declare thread identifiers for the                 
                                                // producer and consumer threads
 
@@ -70,22 +69,19 @@ int main(int argc, char *argv[])
 
                 fclose(infilePtr);   // closes the input and output file streams
                 fclose(outfilePtr);
-            }
-            else
-            {
+            } else {
                 printf("Error: unable to create outfile\n"); // print an error message
                                                              // to the user if unable to
                                                              // create the output file
 
                 fclose(infilePtr);   // close the input file stream
             }
-        }
-        else
+        } else {
             printf("Error: unable to open infile\n");  // print an error message to the   
-    }                                                  // user if unable to open the input
-    else                                               // file
+        }                                              // user if unable to open the input file
+    } else {                                              
         printf("Correct Usage: bounded_buffer_mutex_locks infile outfile\n");   
-                                                           // display the correct usage of
+    }                                                      // display the correct usage of
                                                            // the program to the user
 
     return 0;   // the main thread exits here and returns 0 to the operating system
@@ -94,12 +90,11 @@ int main(int argc, char *argv[])
 // producer thread function to read from the input file and write 10 byte strings to the 
 // shared buffer
 
-void prod_func(FILE *infilePtr)
-{
+void prod_func(FILE *infilePtr) {
     int out = 0;  // int variable to keep track which slot is next in the shared buffer
 
-    while(!feof(infilePtr))   // continue reading the from the input file until the end  
-    {                         // of file is reached
+    while(!feof(infilePtr)) {  // continue reading the from the input file until the end  
+                               // of file is reached
 
         pthread_mutex_lock(&buf_lock);  // lock the mutex 'buf_lock'
 
@@ -132,15 +127,14 @@ void prod_func(FILE *infilePtr)
 // consumer thread function to read 10 byte strings from the shared buffer and write
 // them to the output file
 
-void cons_func(FILE *outfilePtr)
-{
+void cons_func(FILE *outfilePtr) {
     int i, in = 0;   // int variable i is used to indicate how many bytes from the 
                      // 10-byte string should be written to the output file. The int 
                      // variable 'in' is used to keep of track of the next slot in 
                      // the shared buffer to be written to the output file
 
-    while(1)  // continue looping until the producer thread finishes producing and the 
-    {         // shared buffer is empty
+    while(1) { // continue looping until the producer thread finishes producing and the 
+               // shared buffer is empty
 
         pthread_mutex_lock(&buf_lock);  // lock the mutex 'buf_lock'
         
@@ -151,9 +145,8 @@ void cons_func(FILE *outfilePtr)
                                                        // unlocks 'buf_lock'. Locks
                                                        // the 'buf_lock' before 
                                                        // returning.
-        for(i = 0; i < 10; i++)
-        {
-            if(buffer[in][i] == 0)
+        for(i = 0; i < 10; i++) {
+            if (buffer[in][i] == 0)
                 break;              // look for 0 in the next buffer item 
         }
 
@@ -172,8 +165,8 @@ void cons_func(FILE *outfilePtr)
 
         pthread_mutex_unlock(&buf_lock);   // unlock the mutex 'buf_lock'
 
-        if(exitFlag && counter == 0)   // break out of the while loop when exitFlag == 1 
-            break;                     // and counter == 0
+        if (exitFlag && counter == 0)   // break out of the while loop when exitFlag == 1 
+            break;                      // and counter == 0
     }
 
     pthread_exit(0);    // terminate the consumer thread
