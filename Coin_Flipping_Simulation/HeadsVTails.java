@@ -3,24 +3,21 @@ import java.awt.*;
 import java.awt.event.*;
 import java.awt.Graphics;
 
-public class HeadsVTails extends Frame
-{
+public class HeadsVTails extends Frame {
     private int numberOfHeads = 0, numberOfTails = 0, randomNumber, numberOfFlips;
     private float percentOfHeads, percentOfTails;
 
-    public HeadsVTails()
-    {
+    public HeadsVTails() {
         Random generator = new Random();
         Scanner keyboard = new Scanner(System.in);
 
         System.out.print("How many coin flips: ");
         numberOfFlips = keyboard.nextInt();
 
-        for(int i = 0; i < numberOfFlips; i++)
-        {
+        for(int i = 0; i < numberOfFlips; i++) {
             randomNumber = (generator.nextInt(100) % 2);
             
-            if(randomNumber == 1)
+            if (randomNumber == 1)
                 numberOfHeads++;
             else
                 numberOfTails++;
@@ -47,8 +44,7 @@ public class HeadsVTails extends Frame
         addWindowListener(myListener);
     }
 
-    public void paint(Graphics g)
-    {
+    public void paint(Graphics g) {
         g.setColor(Color.black);
 
         g.drawLine(60, 250, 260, 250);  // horizontal axis
@@ -74,16 +70,13 @@ public class HeadsVTails extends Frame
         g.fillRect(170, 250 - (int)percentOfTails, 75, (int)percentOfTails);
     }
 
-    public class WindowDestroyer extends WindowAdapter
-    {
-        public void windowClosing(WindowEvent e)
-        {
+    public class WindowDestroyer extends WindowAdapter {
+        public void windowClosing(WindowEvent e) {
             System.exit(0);
         }
     }
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         HeadsVTails obj = new HeadsVTails();
     }
 }
