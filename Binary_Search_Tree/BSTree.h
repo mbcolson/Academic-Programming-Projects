@@ -6,16 +6,13 @@
 typedef int InfoType;
 typedef int KeyType;
 
-struct Data
-{
+struct Data {
     InfoType i;
     KeyType k;
 };
 
-class BSTree
-{
-    struct node
-    {
+class BSTree {
+    struct node {
         Data info;
         node *left;
         node *right;
