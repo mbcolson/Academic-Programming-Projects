@@ -12,25 +12,21 @@
 
 int isValid(char *);    // function prototype for 'isValid' function
 
-int main(int argc, char *argv[])
-{
-    if(argc == 9) // the argument count to the main function must be equal to 9 
-    {             // or an error message is displayed
+int main(int argc, char *argv[]) {
+    if(argc == 9) { // the argument count to the main function must be equal to 9 
+                    // or an error message is displayed
         int i; 
         int MC0_status, MC1_status, MC2_status, MC3_status, display_status;   
             // declare status variables for the waitpid() system call   
 
-        for(i = 1; i < 9; i++)
-        {
-           if(!isValid(argv[i]))   // validate each string argument passed to main  
-           {
+        for(i = 1; i < 9; i++) {
+           if (!isValid(argv[i])) {  // validate each string argument passed to main  
                printf("Incorrect type of input\n");  // display an error message if 
                break;                                // any argument is invalid 
            }
         }
 
-        if(i == 9)  // if i == 9, all arguments are valid
-        {
+        if (i == 9) { // if i == 9, all arguments are valid
             int p1[2], p2[2], p3[2], p4[2];    // declare int arrays used to return 
                                                // two file descriptors referring to 
                                                // the read and write ends of the pipes
@@ -46,26 +42,23 @@ int main(int argc, char *argv[])
             char write_c3[BUFFER_SIZE];
             char read_c3[BUFFER_SIZE];
 
-            if(pipe(p1) == -1)  // parent process creates 4 pipes for IPC between child         
-            {                   // processes
+            if (pipe(p1) == -1) { // parent process creates 4 pipes for IPC between child         
+                                  // processes
                 fprintf(stderr, "Pipe 1 Failed"); // if the system call pipe() returns -1,
                 return 1;                         // an error occured 
             }
 
-            if(pipe(p2) == -1)
-            {
+            if(pipe(p2) == -1) {
                 fprintf(stderr, "Pipe 2 Failed");
                 return 1; 
             }
 
-            if(pipe(p3) == -1)
-            {
+            if(pipe(p3) == -1) {
                 fprintf(stderr, "Pipe 3 Failed");
                 return 1;
             }
 
-            if(pipe(p4) == -1)
-            {
+            if(pipe(p4) == -1) {
                 fprintf(stderr, "Pipe 4 Failed");
                 return 1;
             } 
@@ -74,18 +67,17 @@ int main(int argc, char *argv[])
 
             MC0 = fork();  // create child process to compute c0
 
-            if(MC0 < 0)    // If fork() fails, -1 is returned in the parent process
-            { 
+            if (MC0 < 0) {   // If fork() fails, -1 is returned in the parent process
                 fprintf(stderr, "Fork Failed");
                 return 1;
             }
             
-            if(MC0 == 0)   // child process returns 0 from fork() system call
-            {
+            if (MC0 == 0) {  // child process returns 0 from fork() system call
                 printf("Child process for computing c0 spawned: pid = %d ppid = %d\n", getpid(),
                     getppid());
 
                 close(p1[READ_END]);   // close the read end of pipe 1
+                
                 int c0 = (atoi(argv[1]) * atoi(argv[5])) + 
                     (atoi(argv[2]) * atoi(argv[7]));    // c0 = a0*b0 + a1*b2
                 
@@ -109,14 +101,12 @@ int main(int argc, char *argv[])
 
             MC1 = fork();  // create child process to compute c1
 
-            if(MC1 < 0)    // If fork() fails, -1 is returned in the parent process
-            {
+            if (MC1 < 0) {   // If fork() fails, -1 is returned in the parent process
                 fprintf(stderr, "Fork Failed");
                 return 1;
             }
 
-            if(MC1 == 0)   // child process returns 0 from fork() system call
-            {
+            if (MC1 == 0) {  // child process returns 0 from fork() system call
                 printf("Child process for computing c1 spawned: pid = %d ppid = %d\n", getpid(),
                     getppid());
 
@@ -144,14 +134,12 @@ int main(int argc, char *argv[])
             
             MC2 = fork();   // create child process to compute c2
 
-            if(MC2 < 0)     // If fork() fails, -1 is returned in the parent process
-            {
+            if (MC2 < 0) {    // If fork() fails, -1 is returned in the parent process
                 fprintf(stderr, "Fork Failed");
                 return 1;
             }
 
-            if(MC2 == 0)    // child process returns 0 from fork() system call
-            {
+            if (MC2 == 0) {   // child process returns 0 from fork() system call
                 printf("Child process for computing c2 spawned: pid = %d ppid = %d\n", getpid(),
                     getppid());
 
@@ -179,14 +167,12 @@ int main(int argc, char *argv[])
             
             MC3 = fork();   // create child process to compute c3
  
-            if(MC3 < 0)     // If fork() fails, -1 is returned in the parent process
-            {
+            if (MC3 < 0) {    // If fork() fails, -1 is returned in the parent process
                 fprintf(stderr, "Fork Failed");
                 return 1;
             }
 
-            if(MC3 == 0)   // child process returns 0 from fork() system call
-            {
+            if (MC3 == 0) {  // child process returns 0 from fork() system call
                 printf("Child process for computing c3 spawned: pid = %d ppid = %d\n", getpid(),
                     getppid());
 
@@ -214,14 +200,12 @@ int main(int argc, char *argv[])
 
             display = fork();  // create child process to display results
             
-            if(display < 0)    // If fork() fails, -1 is returned in the parent process
-            {
+            if (display < 0) {   // If fork() fails, -1 is returned in the parent process
                 fprintf(stderr, "Fork Failed");
                 return 1;
             }
             
-            if(display == 0)   // child process returns 0 from fork() system call
-            { 
+            if (display == 0) {  // child process returns 0 from fork() system call
                 printf("Child process for displaying results spawned: pid = %d ppid = %d\n", 
                     getpid(),getppid());
 
@@ -274,8 +258,7 @@ int main(int argc, char *argv[])
             printf("Parent process now exiting\n");
             exit(0); // terminates the parent process and returns 0 to the operating system
         }
-    }
-    else
+    } else
        printf("Incorrect number of input\n"); // display an error message for invalid argument count
 
     return 0;
@@ -285,25 +268,21 @@ int main(int argc, char *argv[])
 // 0 if the string is not valid and 1 if it is valid. A valid string contains 
 // an optional '+' or '-' character followed by one or more digits
 
-int isValid(char *str)    
-{
+int isValid(char *str) {
     int i = 1;
 
-    if(isdigit(str[0]) || str[0] == '+' || str[0] == '-') 
-    {
-        if((str[0] == '+' || str[0] == '-') && str[1] == 0)
+    if (isdigit(str[0]) || str[0] == '+' || str[0] == '-') {
+        if ((str[0] == '+' || str[0] == '-') && str[1] == 0)
             return 0;
 
-        while(str[i] != 0)
-        {
-            if(!isdigit(str[i]))          
+        while(str[i] != 0) {
+            if (!isdigit(str[i]))          
                return 0;
 
             i++;
         }
 
         return 1;
-    }
-    else
-       return 0;
+    } else
+        return 0;
 }
