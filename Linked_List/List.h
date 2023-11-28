@@ -5,10 +5,8 @@
 
 typedef int ItemType;
 
-class List
-{
-     struct node
-     {
+class List {
+     struct node {
           ItemType It;
           node* next;
      };
