@@ -2,8 +2,7 @@
 
 using namespace std;
 
-int main()
-{
+int main() {
      char c, c1 = 'e';
      STRING s1("hello"), s2("bob");
      STRING s3("wHaT's uP?"), s4("-86492"), s5("-8.767"), s6("world");
