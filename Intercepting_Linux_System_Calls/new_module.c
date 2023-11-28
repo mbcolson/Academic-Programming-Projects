@@ -47,12 +47,12 @@ void get_exe_path(char **exe_path) {
     struct mm_struct *mm;
     mm = current->mm;
 
-    if(mm) {
+    if (mm) {
         down_read(&mm->mmap_sem);
-        if(mm->exe_file) {
+        if (mm->exe_file) {
             char *pathname = kmalloc(PATH_MAX, GFP_ATOMIC);
  
-            if(pathname) {
+            if (pathname) {
                 *exe_path = d_path(&mm->exe_file->f_path, pathname, PATH_MAX);
                 kfree(pathname);
             } else {
@@ -63,8 +63,7 @@ void get_exe_path(char **exe_path) {
     }
 }
 
-asmlinkage size_t new_write(int fd, char __user *buf, size_t count)
-{
+asmlinkage size_t new_write(int fd, char __user *buf, size_t count) {
     char fileinfo_buff[300], path[120], pid_buff[12], cnt_buffer[12], fd_buff[4];
     char *exe_path = "";
 
@@ -98,8 +97,7 @@ asmlinkage size_t new_write(int fd, char __user *buf, size_t count)
     return original_write(fd, buf, count);
 }
 
-asmlinkage size_t new_read(int fd, char __user *buf, size_t count)
-{
+asmlinkage size_t new_read(int fd, char __user *buf, size_t count) {
     char fileinfo_buff[300], path[120], pid_buff[12], cnt_buffer[12], fd_buff[4];
     char *exe_path = "";
 
@@ -133,8 +131,7 @@ asmlinkage size_t new_read(int fd, char __user *buf, size_t count)
     return original_read(fd, buf, count);
 }
 
-asmlinkage long new_connect(int fd, struct sockaddr __user *buff1, int flag)
-{ 
+asmlinkage long new_connect(int fd, struct sockaddr __user *buff1, int flag) { 
     int ret1, ret2, socklen;
     struct sockaddr_in getsock, getpeer;
     char netinfo_buff[300], path[120], buff[100], *exe_path = "";
@@ -142,7 +139,7 @@ asmlinkage long new_connect(int fd, struct sockaddr __user *buff1, int flag)
 
     socklen = sizeof(getsock);
  
-    old_fs=get_fs();
+    old_fs = get_fs();
     set_fs(KERNEL_DS);
 
     ret1 = original_getsockname(fd, (struct sockaddr *)&getsock, &socklen);
@@ -153,8 +150,7 @@ asmlinkage long new_connect(int fd, struct sockaddr __user *buff1, int flag)
 
     printk("\nret1 is %d, ret2 is %d\n", ret1, ret2);
 
-    if(getsock.sin_family == AF_INET)
-    {
+    if (getsock.sin_family == AF_INET) {
         print_time(USER_TIME);
         strcpy(netinfo_buff, USER_TIME + 1);
 
@@ -184,8 +180,7 @@ asmlinkage long new_connect(int fd, struct sockaddr __user *buff1, int flag)
     return original_connect(fd, buff1, flag);
 }
 
-asmlinkage long new_accept(int fd, struct sockaddr __user *buff1, int __user *buff2)
-{
+asmlinkage long new_accept(int fd, struct sockaddr __user *buff1, int __user *buff2) {
     int ret1, ret2, socklen;
     struct sockaddr_in getsock, getpeer;
     char netinfo_buff[300], path[120], buff[100], *exe_path = "";
@@ -193,7 +188,7 @@ asmlinkage long new_accept(int fd, struct sockaddr __user *buff1, int __user *bu
 
     socklen = sizeof(getsock);
 
-    old_fs=get_fs();
+    old_fs = get_fs();
     set_fs(KERNEL_DS);
 
     ret1 = original_getsockname(fd, (struct sockaddr *)&getsock, &socklen);
@@ -204,8 +199,7 @@ asmlinkage long new_accept(int fd, struct sockaddr __user *buff1, int __user *bu
 
     printk("\nret1 is %d, ret2 is %d\n", ret1, ret2);
 
-    if(getsock.sin_family == AF_INET)
-    {
+    if (getsock.sin_family == AF_INET) {
         print_time(USER_TIME);
         strcpy(netinfo_buff, USER_TIME + 1);
 
@@ -236,8 +230,7 @@ asmlinkage long new_accept(int fd, struct sockaddr __user *buff1, int __user *bu
 }
 
 asmlinkage long new_sendto(int fd, void __user *buff1, size_t len, unsigned flags,
-                           struct sockaddr __user *addr, int addr_len)
-{
+                           struct sockaddr __user *addr, int addr_len) {
     int ret1, ret2, socklen;
     struct sockaddr_in getsock, getpeer;
     char netinfo_buff[300], path[120], buff[100], *exe_path = "";
@@ -255,8 +248,7 @@ asmlinkage long new_sendto(int fd, void __user *buff1, size_t len, unsigned flag
     set_fs(old_fs);
     printk("\nret1 is %d, ret2 is %d\n", ret1, ret2);
 
-    if(getsock.sin_family == AF_INET)
-    {
+    if (getsock.sin_family == AF_INET) {
         print_time(USER_TIME);
         strcpy(netinfo_buff, USER_TIME + 1);
 
@@ -287,8 +279,7 @@ asmlinkage long new_sendto(int fd, void __user *buff1, size_t len, unsigned flag
 }
 
 asmlinkage long new_recvfrom(int fd, void __user *buff1, size_t len, unsigned flags,
-                             struct sockaddr __user *ar, int __user *buff2)
-{
+                             struct sockaddr __user *ar, int __user *buff2) {
     int ret1, ret2, socklen;
     struct sockaddr_in getsock, getpeer;
     char netinfo_buff[300], path[120], buff[100], *exe_path = "";
@@ -307,8 +298,7 @@ asmlinkage long new_recvfrom(int fd, void __user *buff1, size_t len, unsigned fl
 
     printk("\nret1 is %d, ret2 is %d\n", ret1, ret2);
 
-    if(getsock.sin_family == AF_INET)
-    {
+    if (getsock.sin_family == AF_INET) {
         print_time(USER_TIME);
         strcpy(netinfo_buff, USER_TIME + 1);
 
@@ -338,14 +328,13 @@ asmlinkage long new_recvfrom(int fd, void __user *buff1, size_t len, unsigned fl
     return (*original_recvfrom)(fd, buff1, len, flags, ar, buff2);
 }
 
-asmlinkage int new_open(const char __user *filename, int flags, int mode)
-{
+asmlinkage int new_open(const char __user *filename, int flags, int mode) {
     char fileinfo_buff[300], path[120], pid_buf[12], *exe_path = "";
 
     print_time(USER_TIME);
     strcpy(fileinfo_buff, USER_TIME + 1);
 
-    if(flags & (O_WRONLY|O_APPEND)) {
+    if (flags & (O_WRONLY|O_APPEND)) {
         strcat(fileinfo_buff,"WR#");
     } else {
         strcat(fileinfo_buff,"RD#");
@@ -369,8 +358,7 @@ asmlinkage int new_open(const char __user *filename, int flags, int mode)
     return (*original_open)(filename, flags, mode);
 }
 
-void write_file(char *buffer, char *path)
-{
+void write_file(char *buffer, char *path) {
     mm_segment_t old_fs;
     int fd, i, j, len = strlen(path);
 
@@ -378,7 +366,7 @@ void write_file(char *buffer, char *path)
     set_fs(KERNEL_DS);
 
     for(i = len - 1, j = 0; j < 10; i--, j++) {
-        if((path[i] < '0' || path[i] > '9') && path[i] != '_') {
+        if ((path[i] < '0' || path[i] > '9') && path[i] != '_') {
             set_fs(old_fs);
             return; 
         } 
@@ -388,7 +376,7 @@ void write_file(char *buffer, char *path)
 
     //printk("\nfd = %d, buffer = %s\n", fd, buffer);
 
-    if(fd >= 0) {
+    if (fd >= 0) {
         original_write(fd, buffer, strlen(buffer));
         original_close(fd);
     } else {
@@ -400,8 +388,7 @@ void write_file(char *buffer, char *path)
     return;
 }
 
-static int __init new_module_init(void) 
-{
+static int __init new_module_init(void) {
     printk("\n*************************Module starting...***************************\n");
 
     write_cr0(read_cr0() & (~ 0x10000));
@@ -431,8 +418,7 @@ static int __init new_module_init(void)
     return 0;
 }
 
-static void __exit new_module_exit(void)
-{
+static void __exit new_module_exit(void) {
     write_cr0(read_cr0() & (~ 0x10000));
 
     syscall_table[__NR_open] = (unsigned long)original_open;
@@ -450,8 +436,7 @@ static void __exit new_module_exit(void)
     return;
 }
 
-short unsigned int my_ntoh(short unsigned int src_port)
-{
+short unsigned int my_ntoh(short unsigned int src_port) {
     short unsigned int t, t1, t2;
 
     t = (src_port >> 8);
@@ -461,8 +446,7 @@ short unsigned int my_ntoh(short unsigned int src_port)
     return(t2);
 }
 
-char *inet_ntoa(struct in_addr inn)
-{
+char *inet_ntoa(struct in_addr inn) {
     static char m[18];
     register char *m1;
 
@@ -476,8 +460,7 @@ char *inet_ntoa(struct in_addr inn)
     return(m);
 }
 
-void print_time(char char_time[])
-{
+void print_time(char char_time[]) {
     struct timeval my_tv;
     struct rtc_time tm;
     unsigned long local_time;
