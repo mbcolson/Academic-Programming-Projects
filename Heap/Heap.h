@@ -6,8 +6,7 @@
 const int MAX_ITEMS = 10;
 typedef int Itemtype;
 
-class Heap
-{
+class Heap {
      void ReheapDown(int root, int last);
      void ReheapUp(int root, int last);
      Itemtype* heap_array;
