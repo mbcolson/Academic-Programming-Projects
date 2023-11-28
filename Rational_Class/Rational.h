@@ -4,8 +4,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Rational
-{
+class Rational {
    long _p;  // numerator
    long _q;  // denominator
    void reduce();  // put fraction in reduced form
