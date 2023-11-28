@@ -32,9 +32,8 @@ class VECTOR
         // Returns the angle between this vector and vector 'v' in radians
         long double angle(const VECTOR &v) const;
 
-        // Returns the vector sum of this vectors 'v1' and 'v2'
-        friend VECTOR operator +(const VECTOR &v1,
-               const VECTOR &v2);
+        // Returns the vector sum of vectors 'v1' and 'v2'
+        friend VECTOR operator +(const VECTOR &v1, const VECTOR &v2);
 
         // Returns the vector difference of vectors 'v1' and 'v2'
         friend VECTOR operator -(const VECTOR &v1,
