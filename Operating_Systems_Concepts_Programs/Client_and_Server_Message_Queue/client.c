@@ -10,8 +10,7 @@
 
 #define SERVER 1L               // constant value used to identify the server process
 
-typedef struct 
-{
+typedef struct {
     long msg_to;                // message header. 'msg_to' is used to indicate the recipient
     long msg_fm;                // of the message. 'msg_fm' is used to indicate the sender.
     char buffer[BUFSIZ];        // message body
@@ -23,17 +22,14 @@ struct msqid_ds buf;            // structure that defines a message queue
 MESSAGE msg;                    // structure used to store a message
 struct stat file_buffer;        // system structure that stores information about files
 
-int main(int argc, char *argv[])
-{
-    if(argc == 2)    // the number of arguments must be equal to two
-    {                
+int main(int argc, char *argv[]) {
+    if(argc == 2) {   // the number of arguments must be equal to two  
         int fd;      // declare a file descriptor
 
         fd = open(argv[1], O_RDONLY, (mode_t)0600);   // open the input file in read 
                                                       // only mode 
                                                                                                                        
-        if (fd == -1)    // if fd == -1, there was an error opening the file
-        {
+        if (fd == -1) {  // if fd == -1, there was an error opening the file
             perror("Error opening the file");  // display an error message to the user
             exit(EXIT_FAILURE);                // terminate the calling process
         };
@@ -56,8 +52,7 @@ int main(int argc, char *argv[])
         msg.msg_to = SERVER;            // assign 'SERVER' to the 'msg_to' field
         msg.msg_fm = (long)getpid();    // assign the client pid to the 'msg_fm' field
 
-        if(msgsnd(mid, &msg, sizeof(msg.buffer), 0) == -1)  // send the message to the 
-        {                                                   // server
+        if(msgsnd(mid, &msg, sizeof(msg.buffer), 0) == -1) { // send the message to the server                                          
             printf("msgsnd failed\n");
             exit(EXIT_FAILURE);   // terminate the process if unable to send the message
         }
@@ -72,8 +67,7 @@ int main(int argc, char *argv[])
         msgctl(mid, IPC_RMID, (struct msqid_ds *)0);  // remove the message queue
 
         close(fd);  // close the input file
-    }
-    else
+    } else
         printf("Correct Usage: clientProc infile");  // display the correct usage 
                                                      // of the program to the user
 
