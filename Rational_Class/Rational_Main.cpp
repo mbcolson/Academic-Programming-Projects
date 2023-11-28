@@ -1,8 +1,7 @@
 #include "Rational.h"
 using namespace std;
 
-int main()
-{
+int main() {
      Rational r1(2,5), r2(3,7), r3(1,1), r4(8,11), r5(1,1), r6(2,3), r7(3,5), r8(3,1);
      
      long l1 = 3, l2 = 4, l3 = 7;
