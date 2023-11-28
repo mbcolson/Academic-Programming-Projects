@@ -1,8 +1,7 @@
 #include "Heap.h"
 using namespace std;
 
-int main()
-{
+int main() {
      Itemtype i1;
      Heap h;
      
