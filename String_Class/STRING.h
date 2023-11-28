@@ -7,8 +7,7 @@ using namespace std;
 /* class invariant: (size == 0 and st == NULL) or size == number of allocated
                     bytes pointed to by st */
 
-class STRING
-{
+class STRING {
      unsigned size;
      char* st;
 public:
@@ -397,16 +396,16 @@ public:
      friend STRING operator+ (const STRING&, const char);
 };
 
-     /* Function: Checks if a character is an alpha character or not.
-        Post: Returns true if the character is an alpha character and false
-              if it is not an alpha character.
-        Parameter #1 : in    */
-     bool IsAlpha(const char);
+/* Function: Checks if a character is an alpha character or not.
+   Post: Returns true if the character is an alpha character and false
+         if it is not an alpha character.
+   Parameter #1 : in    */
+bool IsAlpha(const char);
 
-     /* Function: Checks if a character is numeric or not.
-        Post: Returns true if the character is a number and false if it is not a
-              number.
-        Parameter #1 : in    */
-     bool IsNumeric(const char);
+/* Function: Checks if a character is numeric or not.
+   Post: Returns true if the character is a number and false if it is not a
+         number.
+   Parameter #1 : in    */
+bool IsNumeric(const char);
 
-#endif
+#endif   // _STRING_H_DEF_
