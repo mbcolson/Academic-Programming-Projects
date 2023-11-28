@@ -2,8 +2,7 @@
 
 #define RADIANS_TO_DEGREES(angle) (angle * 180.0) / M_PI
 
-int main()
-{
+int main() {
     VECTOR v1(1.0, 0.0, 0.0);
     VECTOR v2(0.0, 1.0, 0.0);
 
