@@ -144,7 +144,7 @@ int _depth(const BSTree::node* node) {
 }
 
 void _destruct(BSTree::node*& node) {
-    if(node != NULL) {
+    if (node != NULL) {
     	_destruct(node->left);
     	_destruct(node->right);
     	delete node;
