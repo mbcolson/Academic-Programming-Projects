@@ -21,8 +21,7 @@ class AVL extends BST {
             if (n < cur.data) {
                 pcur = cur;
                 cur = cur.left;
-            }
-            else if (n > cur.data) {
+            } else if (n > cur.data) {
                 pcur = cur;
                 cur = cur.right;
             } else {
