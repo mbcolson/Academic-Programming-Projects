@@ -192,21 +192,21 @@ public class CalculatorGUI extends JFrame implements ActionListener {
                 display = "";
                 operand1 = null;
                 operand2 = null;
-            } else if(operator.equals("-")) {
+            } else if (operator.equals("-")) {
                 counter=0;
                 result = operand1 - operand2;
                 inputOutputField.setText("" + result);
                 display = "";
                 operand1 = null;
                 operand2 = null;
-            } else if(operator.equals("*")) {
+            } else if (operator.equals("*")) {
                 counter=0;
                 result = operand1 * operand2;
                 inputOutputField.setText("" + result);
                 display= "";
                 operand1 = null;
                 operand2 = null;
-            } else if(operator.equals("/")) {
+            } else if (operator.equals("/")) {
                 counter=0;
                 result = operand1 / operand2;
                 inputOutputField.setText("" + result);
