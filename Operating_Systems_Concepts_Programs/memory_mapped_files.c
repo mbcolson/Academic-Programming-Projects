@@ -43,12 +43,12 @@ int main(int argc, char *argv[]) {
 
         child1 = fork(); // create a child process
 
-        if(child1 < 0) {  // If fork() fails, -1 is returned in the parent process
+        if (child1 < 0) {  // If fork() fails, -1 is returned in the parent process
             fprintf(stderr, "Fork Failed");
             return 1;
         }
 
-        if(child1 == 0) { // child process returns 0 from the fork() system call
+        if (child1 == 0) { // child process returns 0 from the fork() system call
             printf("Child 1 %d reads: \n %s\n", getpid(), mm_file); // display child 1's process id and the contents
                                                                     // of the memory mapped file
             int i;  
@@ -66,12 +66,12 @@ int main(int argc, char *argv[]) {
 
         child2 = fork();   // create another child process 
 
-        if(child2 < 0) { // If fork() fails, -1 is returned in the parent process
+        if (child2 < 0) { // If fork() fails, -1 is returned in the parent process
             fprintf(stderr, "Fork Failed");
             return 1;
         }
 
-        if(child2 == 0) { // child process returns 0 from the fork() system call
+        if (child2 == 0) { // child process returns 0 from the fork() system call
             sleep(1); // sleep for 1 second to ensure child 1 has finished
 
             printf("Child 2 %d reads: \n %s\n", getpid(), mm_file);  // display child 2's process id
