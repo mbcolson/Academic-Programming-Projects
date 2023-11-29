@@ -23,12 +23,12 @@ void insert(struct node **head, struct node **tail, int n) {
 
     tmp->link = (unsigned long)prv ^ (unsigned long)cur;
  
-    if(prv != NULL)
+    if (prv != NULL)
         prv->link ^= (unsigned long)cur ^ (unsigned long)tmp;
     else
         *head = tmp;
 
-    if(cur != NULL)
+    if (cur != NULL)
         cur->link ^= (unsigned long)prv ^ (unsigned long)tmp;
     else
         *tail = tmp; 
@@ -41,7 +41,7 @@ void delete(struct node **head, struct node **tail, int n) {
     prv = NULL;
 
     while(cur != NULL) {
-        if(cur->data == n) {
+        if (cur->data == n) {
             nxt = (struct node *)(cur->link ^ (unsigned long)prv);
 
             if (prv != NULL)
@@ -57,7 +57,7 @@ void delete(struct node **head, struct node **tail, int n) {
             free(cur);
           
             cur = nxt;
-        } else if(cur->data > n)
+        } else if (cur->data > n)
 	    break;
         else {
             nxt = (struct node *)(cur->link ^ (unsigned long)prv);
@@ -75,7 +75,7 @@ void list(struct node *head) {
     cur = head;
 
     while(cur != NULL) {
-        if(count % 10 == 0)
+        if (count % 10 == 0)
             printf("\n");
         
         printf("%5d ", cur->data);
@@ -105,7 +105,7 @@ int main() {
         printf("Enter number to delete (-1 to exit): ");
         scanf("%d", &num);
 
-        if(num == -1)
+        if (num == -1)
             break;
 
         delete(&head, &tail, num);
