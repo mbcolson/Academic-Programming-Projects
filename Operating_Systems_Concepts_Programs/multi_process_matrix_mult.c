@@ -13,8 +13,8 @@
 int isValid(char *);    // function prototype for 'isValid' function
 
 int main(int argc, char *argv[]) {
-    if(argc == 9) { // the argument count to the main function must be equal to 9 
-                    // or an error message is displayed
+    if (argc == 9) { // the argument count to the main function must be equal to 9 
+                     // or an error message is displayed
         int i; 
         int MC0_status, MC1_status, MC2_status, MC3_status, display_status;   
             // declare status variables for the waitpid() system call   
@@ -48,17 +48,17 @@ int main(int argc, char *argv[]) {
                 return 1;                         // an error occured 
             }
 
-            if(pipe(p2) == -1) {
+            if (pipe(p2) == -1) {
                 fprintf(stderr, "Pipe 2 Failed");
                 return 1; 
             }
 
-            if(pipe(p3) == -1) {
+            if (pipe(p3) == -1) {
                 fprintf(stderr, "Pipe 3 Failed");
                 return 1;
             }
 
-            if(pipe(p4) == -1) {
+            if (pipe(p4) == -1) {
                 fprintf(stderr, "Pipe 4 Failed");
                 return 1;
             } 
