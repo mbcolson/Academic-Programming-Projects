@@ -38,7 +38,7 @@ STRING::STRING(const STRING& s) {
 
 STRING::~STRING() {
     if (size > 0)
-        delete [ ] st;
+        delete [] st;
 }
 
 unsigned STRING::length() const {
@@ -50,7 +50,7 @@ STRING& STRING::operator= (const STRING& s) {
          return *this;
 	
     if (size > 0)
-         delete [ ] st;
+         delete [] st;
 	
     size = s.size;
     st = new char[size];
@@ -181,7 +181,7 @@ STRING& STRING::operator+= (const STRING& s) {
         temp[i] = s.st[i - size];
 	
     if (size > 0)
-        delete [ ] st;
+        delete [] st;
 	
     size += s.size;
     st = new char[size];
@@ -200,7 +200,7 @@ STRING& STRING::operator+= (const char* c) {
         temp[i] = STRING(c).st[i - size];
 	
     if (size > 0)
-        delete [ ] st;
+        delete [] st;
 	
     size += STRING(c).size;
     st = new char[size];
@@ -219,7 +219,7 @@ STRING& STRING::operator+= (const char c) {
         temp[i] = STRING(c).st[i - size];
 
     if (size > 0)
-        delete [ ] st;
+        delete [] st;
 	
     size += STRING(c).size;
     st = new char[size];
