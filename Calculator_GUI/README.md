@@ -2,6 +2,8 @@
 
 A simple Java Swing calculator that performs basic arithmetic operations.
 
+![Calculator GUI](CalculatorGUI_Screenshot.png)
+
 ## Features
 
 * Java GUI built with Swing/AWT
@@ -28,6 +30,3 @@ README.md                      # Project documentation
 * The calculator window is fixed at 250x250 pixels.
 * Operations are performed on two operands at a time.
 * The interface uses a 4x4 grid of buttons.
-
-
-![Calculator GUI](https://github.com/mbcolson/Academic-Programming-Projects/blob/master/Calculator_GUI/CalculatorGUI_Screenshot.png)
