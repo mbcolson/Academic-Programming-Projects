@@ -1,5 +1,26 @@
 # Coin Flipping Simulation
 
-In this Java programming project, flipping a coin x number of times is simulated. The user picks the number of coin flips and then a GUI window displays the number of heads vs. the number of tails in a bar graph. A psedo-random number generator is used to simulate the number of times the coin lands on heads or tails.
+A Java AWT program that simulates flipping a coin and displays the results in a bar graph.
 
-![Heads vs. Tails](https://github.com/mbcolson/Academic-Programming-Projects/blob/master/Coin_Flipping_Simulation/Coin_Flipping_Simulation_Screenshot.png)
+![Coin Flipping Simulation](Coin_Flipping_Simulation_Screenshot.png)
+
+## Features
+
+* Prompts the user for the number of coin flips
+* Randomly simulates heads or tails
+* Displays totals and percentages in the console
+* Shows a GUI bar graph comparing heads vs. tails
+
+## Files
+
+```text id="xw9q2v"
+HeadsVTails.java                         # Main Java source file
+Coin_Flipping_Simulation_Screenshot.png  # Screenshot of the program
+README.md                                # Project documentation
+```
+
+## Notes
+
+* The program opens a 325x325 GUI window.
+* Heads are shown in red, and tails are shown in blue.
+* The graph is scaled using the percentage of heads and tails.
