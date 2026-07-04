@@ -2,6 +2,8 @@
 
 A simple Java Swing animation that displays a red ball bouncing around a GUI window. The ball changes direction when it hits the window edges or the blue square obstacle in the center.
 
+![Bouncing Ball](Bouncing_Ball_Screenshot.png)
+
 ## Features
 
 * Java GUI built with Swing/AWT
@@ -22,5 +24,3 @@ README.md                       # Project documentation
 * The program opens a 500x500 window.
 * The red ball moves continuously and bounces when it reaches a boundary or obstacle.
 * The animation loop uses `Thread.sleep()` and `repaint()` to update the display.
-
-![Bouncing Ball](https://github.com/mbcolson/Academic-Programming-Projects/blob/master/Bouncing_Ball/Bouncing_Ball_Screenshot.png)
