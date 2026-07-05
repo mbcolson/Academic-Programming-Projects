@@ -1,9 +1,29 @@
 # Threaded Binary Search Tree
 
-In this Java programming project, a double-threaded binary search tree was implemented with a GUI window to display the tree.
+A Java implementation of a double-threaded binary search tree with a GUI display for visualizing the tree structure.
 
-## Background
+![Threaded Binary Search Tree](TBST_Screenshot.png)
 
-A double-threaded binary search tree is a type of BST where the nodes that contain a NULL left child and/or right child point to the inorder predecessor and inorder successor nodes (if they exist), respectively. These pointers (threads) allow for forward and reverse inorder traversals without using recursion or a stack.
+## Features
 
-![TBST](https://github.com/mbcolson/Academic-Programming-Projects/blob/master/Threaded_Binary_Search_Tree/TBST_Screenshot.png)
+* Insert integer values into the tree
+* Delete values from the tree
+* Prevent duplicate values from being inserted
+* Uses left and right threads for inorder navigation
+* Displays the tree in a GUI window
+* Updates the visualization after insertions and deletions
+
+## Files
+
+```text id="p4n8vq"
+bstTest.java        # Main program, tree logic, and test menu
+TBST_Screenshot.png # Screenshot of the program
+README.md           # Project documentation
+```
+
+## Notes
+
+* The tree stores integer values.
+* Threads point to inorder predecessor and successor nodes when child links are not present.
+* Threading allows inorder traversal without recursion or a stack.
+* The console menu supports inserting values, deleting values, and exiting the program.
