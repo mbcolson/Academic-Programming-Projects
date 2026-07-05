@@ -1,3 +1,28 @@
 # Heap
 
-In this C++ programming project, a binary max heap data structure was implemented as a class. A binary max heap is a tree-like data structure where each parent node's key is greater than or equal to it's child node's keys. A parent node can have at most two child nodes (this property is what makes it a binary heap). The heap class's public API consists of an Insert(), Retrieve(), isEmpty(), and isFull() methods.
+A C++ implementation of a binary max heap.
+
+## Features
+
+* Insert integer values into the heap
+* Retrieve the maximum value
+* Maintains max-heap order after insertion and removal
+* Checks if the heap is empty
+* Checks if the heap is full
+* Uses recursive reheap operations
+
+## Files
+
+```text id="ap4n8r"
+Heap.h        # Heap class definition
+Heap.cpp      # Heap implementation
+HeapMain.cpp  # Test driver
+README.md     # Project documentation
+```
+
+## Notes
+
+* The heap stores integer values.
+* The maximum heap size is set to 10.
+* `Retrieve()` removes and returns the largest value in the heap.
+* The heap is implemented using a dynamically allocated array.
